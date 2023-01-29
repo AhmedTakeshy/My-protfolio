@@ -78,5 +78,7 @@
   }
 }
 
-@layer {
-}
+/* To hide scrollbar from the screen */
+/* ::-webkit-scrollbar {
+  display: none;
+} */
