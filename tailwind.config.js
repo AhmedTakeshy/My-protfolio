@@ -9,16 +9,15 @@ module.exports = {
       },
     },
     screens: {
-      xs: "480px",
-      ss: "567px",
-      sm: "768px",
-      md: "992px",
-      lg: "1200px",
-      xl: "1400px",
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px",
     },
     fontFamily: {
-      secondary: "Mova",
-      primary: "PG",
+      primary: "Orbitron",
+      secondary: "Rajdhani",
+      tertiary: "Aldrich",
     },
 
     extend: {
@@ -28,6 +27,7 @@ module.exports = {
       },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
+        banner: "url('./assets/img/banner-bg.png')",
         // about: "url('./assets/about.png')",
         // services: "url('./assets/services.png')",
       },
