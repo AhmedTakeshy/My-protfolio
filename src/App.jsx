@@ -1,21 +1,27 @@
-import Header from "./components/Header";
-import Banner from "./components/Banner";
-import Nav from "./components/Nav";
-import Work from "./components/Work";
-import Skills from "./components/Skills";
-import Contact from "./components/Contact";
-import About from "./components/About";
+import React, { lazy, Suspense } from "react";
+import Loader from "./components/UI/Loader";
+
+const Header = lazy(() => import("./components/Header"));
+const Banner = lazy(() => import("./components/Banner"));
+const Nav = lazy(() => import("./components/Nav"));
+const Work = lazy(() => import("./components/work/Work"));
+const Skills = lazy(() => import("./components/skills/Skills"));
+const Contact = lazy(() => import("./components/Contact"));
+const About = lazy(() => import("./components/About"));
+
 // import { BsFillCloudMoonFill } from "react-icons/bs";
 function App() {
   return (
     <div className="bg-site bg-no-repeat bg-cover overflow-hidden">
-      <Header />
-      <Banner />
-      <Skills />
-      <Work />
-      <About />
-      <Contact />
-      <Nav />
+      <Suspense fallback={<Loader />}>
+        <Header />
+        <Banner />
+        <Skills />
+        <Work />
+        <About />
+        <Contact />
+        <Nav />
+      </Suspense>
       <div className="h-[4000px]"></div>
     </div>
   );

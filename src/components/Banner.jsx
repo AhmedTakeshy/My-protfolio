@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { TypeAnimation } from "react-type-animation";
@@ -20,7 +21,7 @@ const Banner = () => (
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
-            className="text-[55px] font-bold leading-[0.8] lg:text-[110px] "
+            className="text-[55px] font-bold leading-[0.8] lg:text-[110px] pointer-events-none"
           >
             AHMED <span>TAKESHY</span>
           </motion.h1>
@@ -31,7 +32,7 @@ const Banner = () => (
             viewport={{ once: false, amount: 0.7 }}
             className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
           >
-            <span className="mr-4 text-white">I am a</span>
+            <span className="mr-4 text-white pointer-events-none">I am a</span>
             <TypeAnimation
               sequence={["Web Developer", 2000, "MERN Developer", 2000]}
               speed={50}
@@ -45,7 +46,7 @@ const Banner = () => (
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
-            className="mb-8 mx-auto max-w-lg lg:mx-0"
+            className="mb-8 mx-auto max-w-lg lg:mx-0 pointer-events-none"
           >
             specializing in front-end development. Delivers efficient solutions
             with a strong focus on attention to detail and problem-solving.
@@ -57,7 +58,7 @@ const Banner = () => (
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
-            className="flex items-center max-w-max gap-x-6 mb-12 mx-auto lg:mx-0"
+            className="flex items-center max-w-max gap-x-6 lg:mb-8 mb-12 mx-auto lg:mx-0"
           >
             <Link to="contact">
               <button className="btn btn-lg">Contact me</button>
@@ -71,7 +72,7 @@ const Banner = () => (
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
-            className="flex text-[22px] gap-x-6 max-w-max mx-auto lg:mx-0"
+            className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0 "
           >
             <a
               href="https://github.com/AhmedTakeshy"
@@ -95,7 +96,7 @@ const Banner = () => (
           whileInView={"show"}
           className="hidden lg:flex flex-1 max-w-[320px] lg:mx-w-[482]"
         >
-          <img src={headerImg} alt="header img" className="img" />
+          <LazyLoadImage src={headerImg} alt="header img" className="img" />
         </motion.div>
       </div>
     </div>
