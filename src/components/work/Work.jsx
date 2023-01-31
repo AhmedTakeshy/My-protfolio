@@ -36,13 +36,13 @@ const Work = () => {
                 Work.
               </h2>
               <p
-                className=" max-w-sm cursor-pointer mb-7"
+                className=" max-w-sm cursor-pointer mb-12"
                 onClick={() => setShowPg((prev) => !prev)}
               >
                 {showPg ? paragraph : `${paragraph.substring(0, 107)} more...`}
               </p>
               <button
-                className="btn btn-sm flex items-center group"
+                className="btn btn-sm flex items-center group mb-12"
                 onClick={() => setFirstClick((prev) => !prev)}
               >
                 View more

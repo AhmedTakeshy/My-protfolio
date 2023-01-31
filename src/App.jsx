@@ -6,8 +6,9 @@ const Banner = lazy(() => import("./components/Banner"));
 const Nav = lazy(() => import("./components/Nav"));
 const Work = lazy(() => import("./components/work/Work"));
 const Skills = lazy(() => import("./components/skills/Skills"));
-const Contact = lazy(() => import("./components/Contact"));
 const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 // import { BsFillCloudMoonFill } from "react-icons/bs";
 function App() {
@@ -20,9 +21,9 @@ function App() {
         <Work />
         <About />
         <Contact />
+        <Footer />
         <Nav />
       </Suspense>
-      <div className="h-[4000px]"></div>
     </div>
   );
 }

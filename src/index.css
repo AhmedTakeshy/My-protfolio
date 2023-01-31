@@ -69,6 +69,6 @@
 }
 
 /* To hide scrollbar from the screen */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
