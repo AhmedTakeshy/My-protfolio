@@ -18,8 +18,6 @@ const toastConfig = {
   progress: undefined,
   theme: "dark",
 };
-// const isValid = (value) => value.trim().length > 0;
-// const isValidEmail = (value) => value.includes("@") && value.trim().length > 2;
 
 const Contact = () => {
   const form = useRef();
@@ -60,24 +58,6 @@ const Contact = () => {
     isFormValid = true;
   }
 
-  // const [validity, setValidity] = useState({
-  //   name: true,
-  //   email: true,
-  //   message: true,
-  // });
-  // const [data, setData] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // });
-
-  // const changeHandler = (eve) => {
-  //   const { name, value } = eve.target;
-  //   return setData((prev) => {
-  //     return { ...prev, [name]: value };
-  //   });
-  // };
-
   const formSubmitHandler = (eve) => {
     eve.preventDefault();
     if (!isFormValid) {
@@ -87,20 +67,7 @@ const Contact = () => {
     resetNameInput();
     resetEmailInput();
     resetMessageInput();
-    // const nameValidation = isValid(data.name);
-    // const emailValidation = isValidEmail(data.email);
-    // const messageValidation = isValid(data.message);
-    // setValidity({
-    //   name: nameValidation,
-    //   email: emailValidation,
-    //   message: messageValidation,
-    // });
 
-    // const isFormValid = nameValidation && emailValidation && messageValidation;
-    // if (!isFormValid) {
-    //   return;
-    // }
-    // Your message has been received. Thank you for reaching out!
     console.log("Form submitted");
     emailjs
       .sendForm(
