@@ -60,7 +60,7 @@ const Banner = () => (
             viewport={{ once: false, amount: 0.7 }}
             className="flex items-center max-w-max gap-x-6 lg:mb-8 mb-12 mx-auto lg:mx-0"
           >
-            <Link to="contact">
+            <Link to="contact" smooth={true}>
               <button className="btn btn-lg">Contact me</button>
             </Link>
             <a className="text-gradient btn-link" href={CV} download>

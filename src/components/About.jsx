@@ -36,15 +36,15 @@ const About = () => {
             <p className="mb-6">
               I am a self-taught and highly motivated web developer with a focus
               on front-end development. With a proven track record of delivering
-              high-quality and efficient solutions, I have the ability to work
+              high-quality and efficient solutions. I have the ability to work
               both independently and as part of a team. I am highly organized,
-              detail-oriented, and have excellent problem-solving and
+              and detail-oriented, and have excellent problem-solving and
               communication skills. I am passionate about website development
               and take pride in creating visually appealing and user-friendly
               websites. My commitment to writing clean and efficient code and my
               natural curiosity drive me to continuously learn and improve my
               skills. I am confident that I can bring my technical expertise,
-              passion, and problem-solving skills to make a positive impact on
+              passion, and problem-solving skills to make a positively impact on
               any project.
             </p>
             <div className="flex gap-x-6 lg:gap-x-10 mb-12">

@@ -8,7 +8,6 @@ import Img3 from "../../assets/img/portfolio-img3.png";
 import Project from "./Project";
 
 const Work = () => {
-  console.log("Work Loaded");
   const [showPg, setShowPg] = useState(false);
   const paragraph = `I specialize in crafting impactful web solutions tailored to my
                 clients' individual needs. My portfolio showcases a range of
