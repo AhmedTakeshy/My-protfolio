@@ -50,17 +50,19 @@ const Work = () => {
             </div>
             {firstClick ? (
               <Project
-                src={Img3}
-                alt="proj 3"
-                preTitle="UI/UX Design"
-                title="Project Title"
+                src={Img1}
+                alt="Majesto img"
+                preTitle="Majesto"
+                live="https://ahmedtakeshy.github.io/Majesto-Food/"
+                code="https://github.com/AhmedTakeshy/Majesto-Food"
               />
             ) : (
               <Project
                 src={Img1}
-                alt="proj 1"
-                preTitle="UI/UX Design"
-                title="Project Title"
+                alt="Majesto img"
+                preTitle="Majesto"
+                live="https://ahmedtakeshy.github.io/Majesto-Food/"
+                code="https://github.com/AhmedTakeshy/Majesto-Food"
               />
             )}
           </motion.div>
@@ -71,26 +73,40 @@ const Work = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 flex flex-col gap-y-10"
           >
-            <Project
-              src={Img2}
-              alt="proj 2"
-              preTitle="UI/UX Design"
-              title="Project Title"
-            />
+            {firstClick ? (
+              <Project
+                src={Img2}
+                alt="YelpCamp img"
+                preTitle="YelpCamp"
+                live="https://yelp-campground.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Yelp-Campground"
+              />
+            ) : (
+              <Project
+                src={Img2}
+                alt="YelpCamp img"
+                preTitle="YelpCamp"
+                live="https://yelp-campground.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Yelp-Campground"
+              />
+            )}
+
             {/* image */}
             {firstClick ? (
               <Project
-                src={Img1}
-                alt="proj 1"
+                src={Img3}
+                alt="proj 3"
                 preTitle="UI/UX Design"
-                title="Project Title"
+                live=""
+                code=""
               />
             ) : (
               <Project
                 src={Img3}
                 alt="proj 3"
                 preTitle="UI/UX Design"
-                title="Project Title"
+                live=""
+                code=""
               />
             )}
           </motion.div>
