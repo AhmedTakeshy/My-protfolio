@@ -99,10 +99,10 @@ const Contact = () => {
             className="flex-1 flex justify-start items-center"
           >
             <div>
-              <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide">
+              <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide pointer-events-none">
                 Get in touch
               </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">
+              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12 pointer-events-none">
                 Let's work <br />
                 together
               </h2>
@@ -128,12 +128,11 @@ const Contact = () => {
               name="name"
               value={enteredName}
               placeholder={`${
-                nameInputHasError
-                  ? "Invalid name! Please try again."
-                  : "Your Name"
+                nameInputHasError ? "Must NOT be empty!" : "Your Name"
               }`}
               onChange={nameChangeHandler}
               onBlur={nameBlurHandler}
+              required
             />
             <input
               className={` bg-transparent border-b py-3 outline-none w-full
@@ -146,12 +145,11 @@ const Contact = () => {
               name="email"
               value={enteredEmail}
               placeholder={`${
-                emailInputHasError
-                  ? "Invalid email! Please try again."
-                  : "Your Email"
+                emailInputHasError ? "Must NOT be empty!" : "Your Email"
               }`}
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
+              required
             />
             <textarea
               className={`bg-transparent border-b py-3 outline-none w-full
@@ -163,12 +161,11 @@ const Contact = () => {
               name="message"
               value={enteredMessage}
               placeholder={`${
-                messageInputHasError
-                  ? "Invalid message! Please try again."
-                  : "Your Message"
+                messageInputHasError ? "Must NOT be empty!" : "Your Message"
               }`}
               onChange={messageChangeHandler}
               onBlur={messageBlurHandler}
+              required
             />
 
             <button type="submit" className="btn btn-lg">
