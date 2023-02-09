@@ -96,7 +96,7 @@ const Work = () => {
               <Project
                 src={Img3}
                 alt="proj 3"
-                preTitle="UI/UX Design"
+                preTitle="Flux"
                 live=""
                 code=""
               />
@@ -104,9 +104,9 @@ const Work = () => {
               <Project
                 src={Img3}
                 alt="proj 3"
-                preTitle="UI/UX Design"
-                live=""
-                code=""
+                preTitle="Flux"
+                live="https://flux-blockchain.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Flux-blockchain"
               />
             )}
           </motion.div>
