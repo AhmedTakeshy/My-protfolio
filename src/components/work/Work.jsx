@@ -97,8 +97,8 @@ const Work = () => {
                 src={Img3}
                 alt="proj 3"
                 preTitle="Flux"
-                live=""
-                code=""
+                live="https://flux-blockchain.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Flux-blockchain"
               />
             ) : (
               <Project
