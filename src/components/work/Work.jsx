@@ -54,7 +54,7 @@ const Work = () => {
                 alt="Majesto img"
                 preTitle="Majesto"
                 live="https://ahmedtakeshy.github.io/Majesto-Food/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food"
+                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
               />
             ) : (
               <Project
@@ -62,7 +62,7 @@ const Work = () => {
                 alt="Majesto img"
                 preTitle="Majesto"
                 live="https://ahmedtakeshy.github.io/Majesto-Food/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food"
+                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
               />
             )}
           </motion.div>
