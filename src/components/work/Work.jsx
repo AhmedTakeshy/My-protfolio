@@ -53,7 +53,7 @@ const Work = () => {
                 src={Img1}
                 alt="Majesto img"
                 preTitle="Majesto"
-                live="https://ahmedtakeshy.github.io/Majesto-Food/"
+                live="https://majesto-food.vercel.app/"
                 code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
               />
             ) : (
@@ -61,7 +61,7 @@ const Work = () => {
                 src={Img1}
                 alt="Majesto img"
                 preTitle="Majesto"
-                live="https://ahmedtakeshy.github.io/Majesto-Food/"
+                live="https://majesto-food.vercel.app/"
                 code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
               />
             )}
