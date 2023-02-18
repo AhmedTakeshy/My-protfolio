@@ -50,6 +50,7 @@ const Skills = () => {
             <Skill src={meter1} alt="express meter" name="Express" />
             <Skill src={meter3} alt="mongodb meter" name="MongoDB" />
             <Skill src={meter2} alt="redux meter" name="Redux" />
+            <Skill src={meter1} alt="redux-toolkit meter" name="Redux-toolkit" />
           </Carousel>
         </div>
       </div>
