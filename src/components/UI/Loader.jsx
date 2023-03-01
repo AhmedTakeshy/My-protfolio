@@ -1,5 +1,14 @@
 import classes from "./Loader.module.css";
-const Loader = () => {
+
+const BlackScreen = () => {
+  return (
+    <div
+      style={{ backgroundColor: "black", height: "100vh", width: "100vw" }}
+    />
+  );
+};
+
+const Spinner = () => {
   const styles = {
     fill: "transparent",
     stroke: "#B809C3",
@@ -32,4 +41,12 @@ const Loader = () => {
   );
 };
 
+const Loader = () => {
+  return (
+    <>
+      <BlackScreen />
+      <Spinner />
+    </>
+  );
+};
 export default Loader;
