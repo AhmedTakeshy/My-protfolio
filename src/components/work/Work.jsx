@@ -48,7 +48,7 @@ const Work = () => {
                 <BsArrowRightCircle className="pl-[10px] text-[30px] group-hover:translate-x-4 transition-all duration-300" />
               </button>
             </div>
-            {firstClick ? (
+            {!firstClick ? (
               <Project
                 src={Img1}
                 alt="Majesto img"
@@ -73,7 +73,7 @@ const Work = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 flex flex-col gap-y-10"
           >
-            {firstClick ? (
+            {!firstClick ? (
               <Project
                 src={Img2}
                 alt="YelpCamp img"
@@ -92,7 +92,7 @@ const Work = () => {
             )}
 
             {/* image */}
-            {firstClick ? (
+            {!firstClick ? (
               <Project
                 src={Img3}
                 alt="proj 3"
