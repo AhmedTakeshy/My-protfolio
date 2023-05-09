@@ -5,6 +5,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import Img1 from "../../assets/img/portfolio-img1.png";
 import Img2 from "../../assets/img/portfolio-img2.png";
 import Img3 from "../../assets/img/portfolio-img3.png";
+import wanderly from "../../assets/img/wanderly.png";
 import Project from "./Project";
 
 const Work = () => {
@@ -26,22 +27,22 @@ const Work = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex flex-col gap-y-12 mb-10 lg:mb-0"
+            className="flex flex-col flex-1 mb-10 gap-y-12 lg:mb-0"
           >
             {/* text */}
             <div>
-              <h2 className="h2 leading-tight text-accent pointer-events-none">
+              <h2 className="leading-tight pointer-events-none h2 text-accent">
                 My Latest <br />
                 Work.
               </h2>
               <p
-                className=" max-w-sm cursor-pointer mb-3 xl:mb-12"
+                className="max-w-sm mb-3 cursor-pointer xl:mb-12"
                 onClick={() => setShowPg((prev) => !prev)}
               >
                 {showPg ? paragraph : `${paragraph.substring(0, 107)} more...`}
               </p>
               <button
-                className="btn btn-sm flex items-center group mb-4 xl:mb-12"
+                className="flex items-center mb-4 btn btn-sm group xl:mb-12"
                 onClick={() => setFirstClick((prev) => !prev)}
               >
                 View more
@@ -71,7 +72,7 @@ const Work = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex flex-col gap-y-10"
+            className="flex flex-col flex-1 gap-y-10"
           >
             {!firstClick ? (
               <Project
@@ -94,11 +95,11 @@ const Work = () => {
             {/* image */}
             {!firstClick ? (
               <Project
-                src={Img3}
+                src={wanderly}
                 alt="proj 3"
-                preTitle="Flux"
-                live="https://flux-blockchain.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Flux-blockchain"
+                preTitle="Wanderly"
+                live="https://wanderly.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Wanderly"
               />
             ) : (
               <Project
