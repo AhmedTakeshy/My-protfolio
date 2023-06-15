@@ -41,8 +41,10 @@ const Skills = () => {
           >
             <Skill src={meter1} alt="react meter" name="HTML5 & CSS3" />
             <Skill src={meter3} alt="tailwind meter" name="Javascript" />
+            <Skill src={meter2} alt="typescript meter" name="Typescript" />
             <Skill src={meter1} alt="sass meter" name="Sass" />
             <Skill src={meter2} alt="node meter" name="ReactJs" />
+            <Skill src={meter3} alt="react-router meter" name="React-router" />
             <Skill src={meter2} alt="jquery meter" name="jQuery" />
             <Skill src={meter3} alt="tailwind meter" name="Tailwind" />
             <Skill src={meter1} alt="bootstrap meter" name="Bootstrap" />
