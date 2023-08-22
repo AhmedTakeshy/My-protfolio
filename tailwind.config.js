@@ -15,9 +15,9 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "Orbitron",
-      secondary: "Rajdhani",
-      tertiary: "Aldrich",
+      primary: ['var(--font-orbitron)'],
+      secondary: ['var(--font-Rajdhani)'],
+      tertiary: ['var(--font-Aldrich)'],
     },
 
     extend: {
@@ -26,9 +26,9 @@ module.exports = {
         accent: "#B809C3",
       },
       backgroundImage: {
-        site: "url('./assets/site-bg.jpg')",
-        banner: "url('./assets/img/banner-bg.png')",
-        about: "url('./assets/img/about.png')",
+        site: "url('/site-bg.jpg')",
+        banner: "url('/img/banner-bg.png')",
+        about: "url('/img/about.png')",
       },
     },
   },
