@@ -1,6 +1,6 @@
 import classes from "./Loader.module.css";
 
-const BlackScreen = () => {
+export const BlackScreen = () => {
   return (
     <div
       style={{ backgroundColor: "black", height: "100vh", width: "100vw" }}
@@ -8,7 +8,7 @@ const BlackScreen = () => {
   );
 };
 
-const Spinner = () => {
+export const Spinner = () => {
   const styles = {
     fill: "transparent",
     stroke: "#B809C3",
@@ -40,13 +40,3 @@ const Spinner = () => {
     </div>
   );
 };
-
-const Loader = () => {
-  return (
-    <>
-      <BlackScreen />
-      <Spinner />
-    </>
-  );
-};
-export default Loader;
