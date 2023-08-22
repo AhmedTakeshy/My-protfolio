@@ -47,20 +47,20 @@ export default function Work () {
               </button>
             </div>
             {!firstClick ? (
-              <Project
-                src="/img/portfolio-img1.png"
-                alt="Majesto img"
-                preTitle="Majesto"
-                live="https://majesto-food.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
-              />
+               <Project
+               src="/img/wanderly.jpg"
+               alt="wanderly img"
+               preTitle="Wanderly"
+               live="https://majesto-food.vercel.app/"
+               code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
+             />
             ) : (
               <Project
-                src="/img/portfolio-img1.png"
-                alt="Majesto img"
-                preTitle="Majesto"
-                live="https://majesto-food.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
+                src="/img/learnu.jpg"
+                alt="leanru img"
+                preTitle="LearnU"
+                live="https://learnu.vercel.app/"
+                code="https://github.com/202303-PRM-TR-FEW/LearnU-Team-1"
               />
             )}
           </motion.div>
@@ -73,38 +73,38 @@ export default function Work () {
           >
             {!firstClick ? (
               <Project
-                src="/img/portfolio-img2.png"
-                alt="YelpCamp img"
-                preTitle="YelpCamp"
-                live="https://yelp-campground.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Yelp-Campground"
+                src="/img/foody.jpg"
+                alt="foody img"
+                preTitle="Foody"
+                live="https://foody-eta.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Foody"
               />
             ) : (
               <Project
-                src="/img/portfolio-img2.png"
-                alt="YelpCamp img"
-                preTitle="YelpCamp"
-                live="https://yelp-campground.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Yelp-Campground"
+                src="/img/majesto.jpg"
+                alt="majesto img"
+                preTitle="Majesto"
+                live="majesto-food.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Majesto-Food"
               />
             )}
 
             {/* image */}
             {!firstClick ? (
               <Project
-                src="/img/wanderly.png"
-                alt="proj 3"
-                preTitle="Wanderly"
-                live="https://wanderly.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Wanderly"
+                src="/img/naviro.jpg"
+                alt="naviro img"
+                preTitle="Naviro"
+                live="https://naviro-dashboard-prod.vercel.app/"
+                // code="https://github.com/AhmedTakeshy/Wanderly"
               />
             ) : (
               <Project
-                src="/img/portfolio-img3.png"
-                alt="proj 3"
-                preTitle="Flux"
-                live="https://flux-blockchain.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Flux-blockchain"
+                src="/img/yelp.jpg"
+                alt="YelpCampground img"
+                preTitle="YelpCampground"
+                live="https://yelp-campground.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Yelp-Campground"
               />
             )}
           </motion.div>

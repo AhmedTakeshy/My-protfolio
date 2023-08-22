@@ -1,37 +1,34 @@
+"use client";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-
+import { useState } from "react";
 type Props = {
   src: string;
   alt: string;
   preTitle: string;
   live: string;
-  code: string;
+  code?: string;
 }
 
 
-export default function Project ({src,alt,preTitle,live,code}:Props) {
+export default function Project ({src,preTitle,live,code}:Props) {
+  const [showLinks, setShowLinks] = useState<boolean>(false);
   return (
     <>
       {/* image */}
       <div
-        className="relative overflow-hidden border-2 border-white group rounded-xl"
+        className="relative overflow-hidden w-[561px] h-[316px] border-2 border-white group rounded-xl bg-cover bg-top hover:bg-bottom transition-all duration-[8s] ease-in-out hover:cursor-pointer"
+        style={{backgroundImage: `url(${src})`}}
+        onClick={() => setShowLinks((prev) => !prev)}
       >
         {/* overlay */}
-        <div
+        {showLinks && (
+          <>
+          <div
           className="absolute z-40 w-full h-full transition-all duration-300 group-hover:bg-black/70"
         ></div>
-        {/* img */}
-        <Image
-          width={400}
-          height={300}
-          className="inline transition-all duration-500 group-hover:scale-125"
-          src={src}
-          alt={alt}
-        />
         {/* preTitle */}
         <div
           className="absolute z-50 transition-all duration-500 -bottom-full left-12 group-hover:bottom-24"
@@ -62,6 +59,9 @@ export default function Project ({src,alt,preTitle,live,code}:Props) {
           </a>
           {/* <span className="text-3xl text-white">{title}</span> */}
         </div>
+        </>
+        )}
+        
       </div>
     </>
   );
