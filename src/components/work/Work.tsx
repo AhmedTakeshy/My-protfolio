@@ -48,7 +48,7 @@ export default function Work () {
             </div>
             {!firstClick ? (
                <Project
-               src="/img/wanderly.jpg"
+               src="/img/wanderly.webp"
                alt="wanderly img"
                preTitle="Wanderly"
                live="https://majesto-food.vercel.app/"
@@ -56,7 +56,7 @@ export default function Work () {
              />
             ) : (
               <Project
-                src="/img/learnu.jpg"
+                src="/img/learnu.webp"
                 alt="leanru img"
                 preTitle="LearnU"
                 live="https://learnu.vercel.app/"
@@ -73,7 +73,7 @@ export default function Work () {
           >
             {!firstClick ? (
               <Project
-                src="/img/foody.jpg"
+                src="/img/foody.webp"
                 alt="foody img"
                 preTitle="Foody"
                 live="https://foody-eta.vercel.app/"
@@ -81,7 +81,7 @@ export default function Work () {
               />
             ) : (
               <Project
-                src="/img/majesto.jpg"
+                src="/img/majesto.webp"
                 alt="majesto img"
                 preTitle="Majesto"
                 live="majesto-food.vercel.app/"
@@ -92,7 +92,7 @@ export default function Work () {
             {/* image */}
             {!firstClick ? (
               <Project
-                src="/img/naviro.jpg"
+                src="/img/naviro.webp"
                 alt="naviro img"
                 preTitle="Naviro"
                 live="https://naviro-dashboard-prod.vercel.app/"
@@ -100,7 +100,7 @@ export default function Work () {
               />
             ) : (
               <Project
-                src="/img/yelp.jpg"
+                src="/img/yelp.webp"
                 alt="YelpCampground img"
                 preTitle="YelpCampground"
                 live="https://yelp-campground.vercel.app/"
