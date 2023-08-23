@@ -121,7 +121,7 @@ export default function Contact() {
             className="flex flex-col items-start flex-1 p-6 pb-24 border shadow-md rounded-2xl gap-y-6 shadow-white "
           >
             <input
-              className={` bg-transparent border-b py-3 outline-none w-full
+              className={` !bg-transparent border-b py-3 outline-none w-full
               ${
                 nameInputHasError
                   ? "placeholder:text-pink-600"
@@ -138,13 +138,13 @@ export default function Contact() {
               required
             />
             <input
-              className={` bg-transparent border-b py-3 outline-none w-full
+              className={` !bg-transparent border-b py-3 outline-none w-full
                ${
                  emailInputHasError
                    ? "placeholder:text-pink-600"
                    : "placeholder:text-white"
                } focus:border-accent transition-all `}
-              type="text"
+              type="email"
               name="email"
               value={enteredEmail}
               placeholder={`${
@@ -155,7 +155,7 @@ export default function Contact() {
               required
             />
             <textarea
-              className={`bg-transparent border-b py-3 outline-none w-full
+              className={`!bg-transparent border-b py-3 outline-none w-full
               ${
                 messageInputHasError
                   ? "placeholder:text-pink-600"
@@ -169,6 +169,7 @@ export default function Contact() {
               onChange={messageChangeHandler}
               onBlur={messageBlurHandler}
               required
+              spellCheck={true}
             />
 
             <button type="submit" className="btn btn-lg">

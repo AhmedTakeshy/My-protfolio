@@ -21,4 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.next
+
+
+# next.js
+/.next/
+/out/
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
