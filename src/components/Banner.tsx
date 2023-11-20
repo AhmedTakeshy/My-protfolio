@@ -80,7 +80,7 @@ const Banner = () => (
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/ahmed-abdelsamie-a1a46a166/"
+              href="https://www.linkedin.com/in/ahmedabdelsamiee/"
               target={"_blank"}
               rel="noreferrer"
             >
