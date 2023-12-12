@@ -47,7 +47,9 @@ export default function Skills () {
             <Skill src="/img/meter1.svg" alt="bootstrap meter" name="Bootstrap" />
             <Skill src="/img/meter2.svg" alt="nextjs meter" name="NextJS" />
             <Skill src="/img/meter1.svg" alt="redux-toolkit meter" name="Redux-toolkit" />
-            <Skill src="/img/meter2.svg" alt="redux meter" name="Redux" />
+            <Skill src="/img/meter3.svg" alt="redux meter" name="Redux" />
+            <Skill src="/img/meter1.svg" alt="Prisma meter" name="Prisma" />
+            <Skill src="/img/meter2.svg" alt="PostgreSQL meter" name="PostgreSQL" />
           </Carousel>
         </div>
       </div>
