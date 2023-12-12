@@ -19,7 +19,7 @@ export default function Project ({src,preTitle,live,code}:Props) {
     <>
       {/* image */}
       <div
-        className="relative overflow-hidden w-[561px] h-[316px] border-2 border-white group rounded-xl bg-cover bg-top hover:bg-bottom transition-all duration-[8s] ease-in-out hover:cursor-pointer"
+        className="relative overflow-hidden sm:w-[470px] md:w-[510px] lg:w-[561px] h-[316px] border-2 border-white group rounded-xl bg-cover bg-top hover:bg-bottom transition-all duration-[8s] ease-in-out hover:cursor-pointer"
         style={{backgroundImage: `url(${src})`}}
         onClick={() => setShowLinks((prev) => !prev)}
       >
