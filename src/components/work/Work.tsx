@@ -5,7 +5,7 @@ import { fadeIn } from "@/src/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Project from "./Project";
 
-export default function Work () {
+export default function Work() {
   const [showPg, setShowPg] = useState(false);
   const paragraph = `I specialize in crafting impactful web solutions tailored to my
                 clients' individual needs. My portfolio showcases a range of
@@ -18,7 +18,7 @@ export default function Work () {
   return (
     <section className="section" id="work">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row gap-x-10">
+        <div className="flex flex-col items-center lg:flex-row gap-x-10">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
@@ -47,13 +47,13 @@ export default function Work () {
               </button>
             </div>
             {!firstClick ? (
-               <Project
-               src="/img/wanderly.webp"
-               alt="wanderly img"
-               preTitle="Wanderly"
-               live="https://majesto-food.vercel.app/"
-               code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
-             />
+              <Project
+                src="/img/wanderly.webp"
+                alt="wanderly img"
+                preTitle="Wanderly"
+                live="https://majesto-food.vercel.app/"
+                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
+              />
             ) : (
               <Project
                 src="/img/learnu.webp"
@@ -96,7 +96,7 @@ export default function Work () {
                 alt="naviro img"
                 preTitle="Naviro"
                 live="https://naviro-dashboard-prod.vercel.app/"
-                // code="https://github.com/AhmedTakeshy/Wanderly"
+              // code="https://github.com/AhmedTakeshy/Wanderly"
               />
             ) : (
               <Project
