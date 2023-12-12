@@ -18,13 +18,13 @@ export default function Work() {
   return (
     <section className="section" id="work">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center lg:flex-row gap-x-10">
+        <div className="flex flex-col items-center xl:flex-row gap-x-10">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex flex-col flex-1 mb-10 gap-y-12 lg:mb-0"
+            className="flex flex-col flex-1 mb-10 gap-y-12 xl:mb-0"
           >
             {/* text */}
             <div>
