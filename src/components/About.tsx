@@ -2,7 +2,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-export default function About  () {
+export default function About() {
   const [ref, inView] = useInView({
     threshold: 0.5,
   });
