@@ -1,9 +1,9 @@
 
 export default function Footer (){
   return (
-    <div className="text-white flex justify-center relative z-[51] pb-[6px]">
+    <p className="text-white flex justify-center relative z-[51] sm:pb-[6px] text-base sm:text-lg shadow">
       Copyright © {new Date().getFullYear()} Takeshy. All rights reserved.
-    </div>
+    </p>
   );
 };
 
