@@ -5,20 +5,93 @@ import { fadeIn } from "@/src/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Project from "./Project";
 
+
+const projects: Project[] = [
+  {
+    src: "/img/fajer.webp",
+    alt: "fajer-baghdad img",
+    preTitle: "Fajer",
+    live: "https://fajer-baghdad.vercel.app/",
+  },
+  {
+    src: "/img/naviro.webp",
+    alt: "naviro img",
+    preTitle: "Naviro",
+    live: "https://naviro-dashboard-prod.vercel.app/",
+  },
+  {
+    src: "/img/wanderly.webp",
+    alt: "wanderly img",
+    preTitle: "Wanderly",
+    live: "https://majesto-food.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Wanderly",
+  },
+  {
+    src: "/img/foody.webp",
+    alt: "foody img",
+    preTitle: "Foody",
+    live: "https://foody-eta.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Foody",
+  },
+  {
+    src: "/img/majesto.webp",
+    alt: "majesto img",
+    preTitle: "Majesto",
+    live: "majesto-food.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Majesto-Food",
+  },
+  {
+    src: "/img/yelp.webp",
+    alt: "YelpCampground img",
+    preTitle: "YelpCampground",
+    live: "https://yelp-campground.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Yelp-Campground",
+  },
+  {
+    src: "/img/learnu.webp",
+    alt: "leanru img",
+    preTitle: "LearnU",
+    live: "https://learnu.vercel.app/",
+    code: "https://github.com/202303-PRM-TR-FEW/LearnU-Team-1",
+  },
+
+];
+
 export default function Work() {
-  const [showPg, setShowPg] = useState(false);
-  const paragraph = `I specialize in crafting impactful web solutions tailored to my
-                clients' individual needs. My portfolio showcases a range of
-                cutting-edge projects, utilizing the latest technologies to
-                deliver efficient, visually appealing results. My passion for
-                collaboration and custom web development has quickly positioned
-                me as a rising star in the industry.`;
-  const [firstClick, setFirstClick] = useState(false);
+  const [viewMore, setViewMore] = useState<{
+    skip: number;
+    take: number;
+  }>({
+    skip: 0,
+    take: 3,
+  });
+
+  function viewMoreHandler() {
+    console.log(viewMore)
+    if (viewMore.take >= projects.length) {
+      setViewMore(preValue => (
+        {
+          ...preValue,
+          skip: 0,
+          take: 3,
+        }
+      ))
+      return
+    } else {
+      setViewMore(preValue => (
+        {
+          ...preValue,
+          skip: viewMore.skip + 3,
+          take: viewMore.take + 3,
+        }
+      ))
+    }
+  }
 
   return (
     <section className="section" id="work">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center xl:flex-row gap-x-10">
+        <div className="grid items-center gap-10 xl:grid-cols-2">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
@@ -29,85 +102,41 @@ export default function Work() {
             {/* text */}
             <div>
               <h2 className="leading-tight pointer-events-none h2 text-accent">
-                My Latest <br />
+                Some Of My Latest <br />
                 Work.
               </h2>
               <p
                 className="max-w-sm mb-3 cursor-pointer xl:mb-12"
-                onClick={() => setShowPg((prev) => !prev)}
               >
-                {showPg ? paragraph : `${paragraph.substring(0, 107)} more...`}
+                Here's a few  projects I've worked on recently. Projects are clickable, two click to hide the links.
               </p>
               <button
                 className="flex items-center mb-4 btn btn-sm group xl:mb-12"
-                onClick={() => setFirstClick((prev) => !prev)}
+                onClick={viewMoreHandler}
               >
                 View more
                 <BsArrowRightCircle className="pl-[10px] text-[30px] group-hover:translate-x-4 transition-all duration-300" />
               </button>
             </div>
-            {!firstClick ? (
-              <Project
-                src="/img/wanderly.webp"
-                alt="wanderly img"
-                preTitle="Wanderly"
-                live="https://majesto-food.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food/tree/master"
-              />
-            ) : (
-              <Project
-                src="/img/learnu.webp"
-                alt="leanru img"
-                preTitle="LearnU"
-                live="https://learnu.vercel.app/"
-                code="https://github.com/202303-PRM-TR-FEW/LearnU-Team-1"
-              />
-            )}
           </motion.div>
-          <motion.div
-            variants={fadeIn("left", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex flex-col flex-1 gap-y-10"
-          >
-            {!firstClick ? (
+          {projects.map((project, index) => (
+            <motion.div
+              variants={fadeIn("left", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-col flex-1 gap-y-10"
+            >
               <Project
-                src="/img/foody.webp"
-                alt="foody img"
-                preTitle="Foody"
-                live="https://foody-eta.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Foody"
+                key={index}
+                src={project.src}
+                alt={project.alt}
+                preTitle={project.preTitle}
+                live={project.live}
+                code={project.code}
               />
-            ) : (
-              <Project
-                src="/img/majesto.webp"
-                alt="majesto img"
-                preTitle="Majesto"
-                live="majesto-food.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Majesto-Food"
-              />
-            )}
-
-            {/* image */}
-            {!firstClick ? (
-              <Project
-                src="/img/naviro.webp"
-                alt="naviro img"
-                preTitle="Naviro"
-                live="https://naviro-dashboard-prod.vercel.app/"
-              // code="https://github.com/AhmedTakeshy/Wanderly"
-              />
-            ) : (
-              <Project
-                src="/img/yelp.webp"
-                alt="YelpCampground img"
-                preTitle="YelpCampground"
-                live="https://yelp-campground.vercel.app/"
-                code="https://github.com/AhmedTakeshy/Yelp-Campground"
-              />
-            )}
-          </motion.div>
+            </motion.div>
+          )).slice(viewMore.skip, viewMore.take)}
         </div>
       </div>
     </section>
