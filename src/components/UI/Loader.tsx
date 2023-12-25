@@ -9,7 +9,8 @@ export const BlackScreen = () => {
 };
 
 export const Spinner = () => {
-  const styles = {
+
+  const styles: React.CSSProperties = {
     fill: "transparent",
     stroke: "#B809C3",
     strokeWidth: "7px",
