@@ -4,16 +4,10 @@ import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
 import Link from "next/link";
 import { useState } from "react";
-type Props = {
-  src: string;
-  alt: string;
-  preTitle: string;
-  live: string;
-  code?: string;
-}
 
 
-export default function Project ({src,preTitle,live,code}:Props) {
+
+export default function Project ({src,preTitle,live,code}:Project) {
   const [showLinks, setShowLinks] = useState<boolean>(false);
   return (
     <>
