@@ -29,18 +29,14 @@ export default function About() {
             <h2 className="h2 text-accent">About me.</h2>
             <h3 className="mb-4 h3 ">I'm Ahmed, and</h3>
             <p className="mb-6">
-              I am a self-taught and highly motivated web developer with a focus
-              on front-end development. With a proven track record of delivering
-              high-quality and efficient solutions. I have the ability to work
+              I am a self-taught Frontend developer with more than 3 years of experience
+              more focused on UX and user interactions using the
+              latest modern technology such as <b>Next.js</b>, <b>Typescript</b>,
+              and <b>React</b> and highly motivated web developer with a focus
+              on front-end development. I have the ability to work
               both independently and as part of a team. I am highly organized,
-              and detail-oriented, and have excellent problem-solving and
-              communication skills. I am passionate about website development
-              and take pride in creating visually appealing and user-friendly
-              websites. My commitment to writing clean and efficient code and my
-              natural curiosity drive me to continuously learn and improve my
-              skills. I am confident that I can bring my technical expertise,
-              passion, and problem-solving skills to make a positively impact on
-              any project.
+              and detail-oriented. I am passionate about web apps development
+              and learning new technology or tools making me so excited.
             </p>
             <div className="flex mb-12 gap-x-6 lg:gap-x-10">
               <div>
@@ -61,7 +57,7 @@ export default function About() {
               </div>
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={15} duration={4}/> : null}+
+                  {inView ? <CountUp start={0} end={15} duration={4} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Satisfied <br /> Clients
