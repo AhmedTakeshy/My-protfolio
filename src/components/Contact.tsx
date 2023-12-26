@@ -2,31 +2,31 @@
 import React, { FormEventHandler, useRef } from "react";
 import useInput from "../hooks/use-input";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast,ToastOptions } from "react-toastify";
+import { ToastContainer, toast, ToastOptions } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp, BsMessenger } from "react-icons/bs";
 import Link from "next/link";
+import { MotionDiv, MotionForm } from "../motionsDev";
 
 
-  const toastConfig:ToastOptions = {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "dark",
-  };
+const toastConfig: ToastOptions = {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "dark",
+};
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
 
-  const inputIsNotEmpty = (value: string):boolean => value.trim().length > 0;
-  const emailIsNotEmpty = (value: string):boolean =>
+  const inputIsNotEmpty = (value: string): boolean => value.trim().length > 0;
+  const emailIsNotEmpty = (value: string): boolean =>
     value.includes("@") && value.trim().length > 1;
 
   const {
@@ -81,11 +81,11 @@ export default function Contact() {
       )
       .then(
         (result) => {
-          toast.success("Your message has been received!",toastConfig);
+          toast.success("Your message has been received!", toastConfig);
         },
         (error) => {
           console.log(error.text);
-          toast.error("Something went wrong!",toastConfig);
+          toast.error("Something went wrong!", toastConfig);
         }
       );
   };
@@ -94,7 +94,7 @@ export default function Contact() {
     <section className="py-16 lg:section" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
-          <motion.div
+          <MotionDiv
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
@@ -110,8 +110,8 @@ export default function Contact() {
                 together
               </h2>
             </div>
-          </motion.div>
-          <motion.form
+          </MotionDiv>
+          <MotionForm
             ref={form}
             variants={fadeIn("left", 0.3)}
             initial="hidden"
@@ -122,50 +122,44 @@ export default function Contact() {
           >
             <input
               className={` !bg-transparent border-b py-3 outline-none w-full
-              ${
-                nameInputHasError
+              ${nameInputHasError
                   ? "placeholder:text-pink-600"
                   : "placeholder:text-white"
-              } focus:border-accent transition-all `}
+                } focus:border-accent transition-all `}
               type="text"
               name="name"
               value={enteredName}
-              placeholder={`${
-                nameInputHasError ? "Must NOT be empty!" : "Your Name"
-              }`}
+              placeholder={`${nameInputHasError ? "Must NOT be empty!" : "Your Name"
+                }`}
               onChange={nameChangeHandler}
               onBlur={nameBlurHandler}
               required
             />
             <input
               className={` !bg-transparent border-b py-3 outline-none w-full
-               ${
-                 emailInputHasError
-                   ? "placeholder:text-pink-600"
-                   : "placeholder:text-white"
-               } focus:border-accent transition-all `}
+               ${emailInputHasError
+                  ? "placeholder:text-pink-600"
+                  : "placeholder:text-white"
+                } focus:border-accent transition-all `}
               type="email"
               name="email"
               value={enteredEmail}
-              placeholder={`${
-                emailInputHasError ? "Must NOT be empty!" : "Your Email"
-              }`}
+              placeholder={`${emailInputHasError ? "Must NOT be empty!" : "Your Email"
+                }`}
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
               required
             />
             <textarea
               className={`!bg-transparent border-b py-3 outline-none w-full
-              ${
-                messageInputHasError
+              ${messageInputHasError
                   ? "placeholder:text-pink-600"
                   : "placeholder:text-white"
-              } focus:border-accent transition-all resize-none mb-12 `}
+                } focus:border-accent transition-all resize-none mb-12 `}
               name="message"
               value={enteredMessage}
-              placeholder={`${
-                messageInputHasError ? "Must NOT be empty!" : "Your Message"
-              }`}
+              placeholder={`${messageInputHasError ? "Must NOT be empty!" : "Your Message"
+                }`}
               onChange={messageChangeHandler}
               onBlur={messageBlurHandler}
               required
@@ -194,7 +188,7 @@ export default function Contact() {
                 <BsMessenger className="text-[1.5rem]" />
               </Link>
             </div>
-          </motion.form>
+          </MotionForm>
         </div>
       </div>
       <ToastContainer></ToastContainer>
