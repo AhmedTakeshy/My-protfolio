@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link as LinkRs } from "react-scroll";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { fadeIn } from "../variants";
@@ -58,9 +59,15 @@ const Banner = () => (
             viewport={{ once: false, amount: 0.7 }}
             className="flex items-center mx-auto mb-12 max-w-max gap-x-6 lg:mb-8 lg:mx-0"
           >
-            <Link href="/#contact">
+            <LinkRs
+            to="contact"
+            activeClass="active"
+            smooth={true}
+            spy={true}
+            offset={30}
+            >
               <button className="btn btn-lg">Contact me</button>
-            </Link>
+            </LinkRs>
             <Link className="text-gradient btn-link" href="/Ahmed.pdf" download target="_blank" rel="noopener noreferrer">
               My Resume
             </Link>
