@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import Link from "next/link";
 
 export default function Header (){
   return (
@@ -10,7 +11,7 @@ export default function Header (){
             <Image width={50} height={50} src="/logo1.png" alt="logo" className="w-12 h-12" />
           </button>
           <div className="flex items-center justify-center">
-            <Link to="contact" smooth={true}>
+            <Link href="/#contact">
               <button className="btn btn-sm">Let's Talk</button>
             </Link>
           </div>
