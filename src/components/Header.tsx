@@ -16,7 +16,7 @@ export default function Header (){
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={30}
+            offset={50}
             >
               <button className="btn btn-sm">Let's Talk</button>
             </Link>
