@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { fadeIn } from "@/src/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import Project from "./Project";
+import { MotionDiv } from "@/src/motionsDev";
 
 
 const projects: Project[] = [
@@ -92,7 +92,7 @@ export default function Work() {
     <section className="section" id="work">
       <div className="container mx-auto">
         <div className="grid items-center gap-10 xl:grid-cols-2">
-          <motion.div
+          <MotionDiv
             variants={fadeIn("right", 0.3)}
             initial="hidden"
             whileInView={"show"}
@@ -114,13 +114,13 @@ export default function Work() {
                 className="flex items-center mb-4 btn btn-sm group xl:mb-12"
                 onClick={viewMoreHandler}
               >
-                View more
+                {viewMore.take >= projects.length ? "Return" : "View More"}
                 <BsArrowRightCircle className="pl-[10px] text-[30px] group-hover:translate-x-4 transition-all duration-300" />
               </button>
             </div>
-          </motion.div>
+          </MotionDiv>
           {projects.map((project, index) => (
-            <motion.div
+            <MotionDiv
               variants={fadeIn("left", 0.3)}
               initial="hidden"
               whileInView={"show"}
@@ -135,7 +135,7 @@ export default function Work() {
                 live={project.live}
                 code={project.code}
               />
-            </motion.div>
+            </MotionDiv>
           )).slice(viewMore.skip, viewMore.take)}
         </div>
       </div>
