@@ -64,7 +64,7 @@ const Banner = () => (
             activeClass="active"
             smooth={true}
             spy={true}
-            offset={30}
+            offset={50}
             >
               <button className="btn btn-lg">Contact me</button>
             </LinkRs>
