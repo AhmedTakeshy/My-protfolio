@@ -1,7 +1,9 @@
+"use client"
 import { BiHomeAlt, BiUser, BiCode } from "react-icons/bi";
 import { BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
 export default function Nav () {
+
   return (
     <nav className="fixed z-50 w-full overflow-hidden bottom-3 lg:bottom-8">
       <div className="container mx-auto">
@@ -15,7 +17,7 @@ export default function Nav () {
             smooth={true}
             offset={-200}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center`}
           >
             <BiHomeAlt />
           </Link>
@@ -24,7 +26,7 @@ export default function Nav () {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center`}
           >
             <BiCode />
           </Link>
@@ -33,7 +35,7 @@ export default function Nav () {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center`}
           >
             <BsBriefcase />
           </Link>
@@ -42,7 +44,7 @@ export default function Nav () {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center`}
           >
             <BiUser />
           </Link>
@@ -51,7 +53,8 @@ export default function Nav () {
             activeClass="active"
             smooth={true}
             spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
+            offset={30}
+            className={`cursor-pointer w-[60px] h-[60px] flex items-center justify-center`}
           >
             <BsChatSquare />
           </Link>
