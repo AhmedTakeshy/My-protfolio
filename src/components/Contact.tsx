@@ -106,7 +106,7 @@ export default function Contact() {
                 Get in touch
               </h4>
               <h2 className="text-[45px] lg:text-[90px] leading-none mb-12 pointer-events-none">
-                Let's work <br />
+                Let&apos;s work <br />
                 together
               </h2>
             </div>
@@ -170,22 +170,41 @@ export default function Contact() {
               Send message
             </button>
             <div className="flex items-center gap-x-6">
-              <a href="mailto:ahmedtakeshy@gmail.com">
-                <HiOutlineMail className="text-[1.75rem]" />
-              </a>
+              <Link
+                aria-label="email"
+                aria-description="email link"
+                title="link to my email"
+                href="mailto:ahmedtakeshy@gmail.com">
+                <HiOutlineMail
+                  aria-label="icon"
+                  aria-description="icon for email"
+                  className="text-[1.75rem]" />
+              </Link>
               <Link
                 href="https://api.whatsapp.com/send?phone=905511635796"
                 target={"_blank"}
                 rel="noreferrer noopener"
+                aria-label="whatsapp"
+                aria-description="whatsapp link"
+                title="link to my whatsapp"
               >
-                <BsWhatsapp className="text-[1.5rem]" />
+                <BsWhatsapp
+                  aria-label="icon"
+                  aria-description="icon for whatsapp"
+                  className="text-[1.5rem]" />
               </Link>
               <Link
                 href="https://m.me/ahmed.takeshy.1"
                 target={"_blank"}
                 rel="noreferrer noopener"
+                aria-label="messenger"
+                aria-description="messenger link"
+                title="link to my messenger"
               >
-                <BsMessenger className="text-[1.5rem]" />
+                <BsMessenger
+                  aria-label="icon"
+                  aria-description="icon for messenger"
+                  className="text-[1.5rem]" />
               </Link>
             </div>
           </MotionForm>
