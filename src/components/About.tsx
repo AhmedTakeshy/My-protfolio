@@ -1,8 +1,9 @@
 "use client"
-import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { fadeIn } from "../variants";
-import { MotionDiv } from "../motionsDev";
+import CountUp from "react-countup";
+
+
 export default function About() {
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -27,7 +28,7 @@ export default function About() {
             className="flex-1 pointer-events-none"
           >
             <h2 className="h2 text-accent">About me.</h2>
-            <h3 className="mb-4 h3 ">I'm Ahmed, and</h3>
+            <h3 className="mb-4 h3 ">I&apos;m Ahmed, and</h3>
             <p className="mb-6">
               I am a self-taught Frontend developer with more than 3 years of experience
               more focused on UX and user interactions using the
