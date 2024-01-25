@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import { fadeIn } from "@/src/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
-import Project from "./Project";
+import dynamic from 'next/dynamic'
+
+const Project = dynamic(() => import("./Project"));
 import { MotionDiv } from "@/src/motionsDev";
 
 
@@ -108,7 +110,7 @@ export default function Work() {
               <p
                 className="max-w-sm mb-3 cursor-pointer xl:mb-12"
               >
-                Here's a few  projects I've worked on recently. Projects are clickable, two click to hide the links.
+                Here&apos;s a few  projects I&apos;ve worked on recently. Projects are clickable, two click to hide the links.
               </p>
               <button
                 className="flex items-center mb-4 btn btn-sm group xl:mb-12"
@@ -126,6 +128,7 @@ export default function Work() {
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
               className="flex flex-col flex-1 gap-y-10"
+              key={index}
             >
               <Project
                 key={index}
