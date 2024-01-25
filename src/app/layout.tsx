@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   applicationName: "Ahmed Takeshy",
   generator: "Ahmed Takeshy",
   referrer: 'origin-when-cross-origin',
-  authors: {name: "Ahmed Takeshy", url: "https://takeshy.works"},
+  authors: { name: "Ahmed Takeshy", url: "https://takeshy.works" },
   creator: "Ahmed Takeshy",
   publisher: "Ahmed Takeshy",
   metadataBase: new URL('https://takeshy.works'),
