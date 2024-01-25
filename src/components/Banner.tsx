@@ -7,6 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 import { fadeIn } from "../variants";
 import { MotionDiv, MotionH1, MotionP } from "../motionsDev";
 
+
 const Banner = () => (
   <section
     className="min-h-[85vh] lg:min-h-[78vh] flex items-center bg-banner bg-cover bg-no-repeat bg-fixed"
@@ -59,10 +60,10 @@ const Banner = () => (
             viewport={{ once: false, amount: 0.7 }}
             className="flex items-center mx-auto mb-12 max-w-max gap-x-6 lg:mb-8 lg:mx-0"
           >
-            <Link to="contact" title="link to contact section for contact from" smooth={true} aria-label="link" aria-details="link to contact section for contact form">
+            <LinkRs to="contact" title="link to contact section for contact from" smooth={true} aria-label="link" aria-details="link to contact section for contact form">
               <button className="btn btn-lg">Contact me</button>
-            </Link>
-            <a className="text-gradient btn-link" href="/Ahmed.pdf" title="link to download my resume" aria-label="link" download target="_blank" rel="noopener noreferrer" aria-details="link to download my resume">
+            </LinkRs>
+            <Link className="text-gradient btn-link" href="/Ahmed.pdf" title="link to download my resume" aria-label="link" download target="_blank" rel="noopener noreferrer" aria-details="link to download my resume">
               My Resume
             </Link>
           </MotionDiv>
@@ -82,8 +83,8 @@ const Banner = () => (
               title="link to my github profile"
             >
               <FaGithub aria-label="icon" aria-details="icon for github" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/in/ahmedabdelsamiee/"
               target={"_blank"}
               rel="noreferrer"
@@ -92,8 +93,8 @@ const Banner = () => (
               title="link to my linkedin profile"
             >
               <FaLinkedin aria-label="icon" aria-description="icon for linkedin" />
-            </a>
-          </motion.div>
+            </Link>
+          </MotionDiv>
         </div>
         <MotionDiv
           variants={fadeIn("down", 0.5)}
@@ -102,7 +103,7 @@ const Banner = () => (
           className="hidden lg:flex flex-1 max-w-[320px] lg:mx-w-[482]"
         >
           <Image width={300} height={300} src="/img/header-img.svg" alt="header img" className="w-auto h-auto img" />
-        </motion.div>
+        </MotionDiv>
       </div>
     </div>
   </section>
