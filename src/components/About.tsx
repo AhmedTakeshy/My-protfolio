@@ -2,6 +2,8 @@
 import { useInView } from "react-intersection-observer";
 import { fadeIn } from "../variants";
 import CountUp from "react-countup";
+import { MotionDiv } from "../motionsDev";
+
 
 
 export default function About() {
