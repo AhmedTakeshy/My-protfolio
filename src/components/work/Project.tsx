@@ -1,4 +1,3 @@
-"use client";
 import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
 import Link from "next/link";
