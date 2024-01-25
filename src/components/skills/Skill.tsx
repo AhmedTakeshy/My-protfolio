@@ -14,8 +14,9 @@ export default function Skill({ src, alt, name }: Props) {
         height={200}
         src={src}
         alt={alt}
-        className="w-[45%] mb-6" />
-      <h5 className="font-semibold tracking-widest pointer-events-none">
+        className="w-[45%] mb-6"
+      />
+      <h5 className="font-semibold tracking-widest">
         {name}
       </h5>
     </div>
