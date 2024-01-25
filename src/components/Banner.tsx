@@ -59,16 +59,10 @@ const Banner = () => (
             viewport={{ once: false, amount: 0.7 }}
             className="flex items-center mx-auto mb-12 max-w-max gap-x-6 lg:mb-8 lg:mx-0"
           >
-            <LinkRs
-            to="contact"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            offset={50}
-            >
+            <Link to="contact" title="link to contact section for contact from" smooth={true} aria-label="link" aria-details="link to contact section for contact form">
               <button className="btn btn-lg">Contact me</button>
-            </LinkRs>
-            <Link className="text-gradient btn-link" href="/Ahmed.pdf" download target="_blank" rel="noopener noreferrer">
+            </Link>
+            <a className="text-gradient btn-link" href="/Ahmed.pdf" title="link to download my resume" aria-label="link" download target="_blank" rel="noopener noreferrer" aria-details="link to download my resume">
               My Resume
             </Link>
           </MotionDiv>
@@ -83,17 +77,23 @@ const Banner = () => (
               href="https://github.com/AhmedTakeshy"
               target={"_blank"}
               rel="noreferrer"
+              aria-label="github"
+              aria-details="github link"
+              title="link to my github profile"
             >
-              <FaGithub />
-            </Link>
-            <Link
+              <FaGithub aria-label="icon" aria-details="icon for github" />
+            </a>
+            <a
               href="https://www.linkedin.com/in/ahmedabdelsamiee/"
               target={"_blank"}
               rel="noreferrer"
+              aria-label="linkedin"
+              aria-details="linkedin link"
+              title="link to my linkedin profile"
             >
-              <FaLinkedin />
-            </Link>
-          </MotionDiv>
+              <FaLinkedin aria-label="icon" aria-description="icon for linkedin" />
+            </a>
+          </motion.div>
         </div>
         <MotionDiv
           variants={fadeIn("down", 0.5)}
@@ -101,8 +101,8 @@ const Banner = () => (
           whileInView={"show"}
           className="hidden lg:flex flex-1 max-w-[320px] lg:mx-w-[482]"
         >
-          <Image width={300} height={300} src="/img/header-img.svg" alt="header img" className="img" />
-        </MotionDiv>
+          <Image width={300} height={300} src="/img/header-img.svg" alt="header img" className="w-auto h-auto img" />
+        </motion.div>
       </div>
     </div>
   </section>
