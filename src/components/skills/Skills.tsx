@@ -1,11 +1,10 @@
 "use client"
-import React from "react";
 import Carousel, { ResponsiveType } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import dynamic from 'next/dynamic'
 
 
-const Carousel = dynamic(() => import("react-multi-carousel"));
+
 const Skill = dynamic(() => import("./Skill"));
 export default function Skills() {
   const responsive: ResponsiveType = {
