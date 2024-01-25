@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import { fadeIn } from "@/src/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import dynamic from 'next/dynamic'
-
-const Project = dynamic(() => import("./Project"));
 import { MotionDiv } from "@/src/motionsDev";
 
+const Project = dynamic(() => import("./Project"));
 
 const projects: Project[] = [
   {
@@ -69,7 +68,6 @@ export default function Work() {
   });
 
   function viewMoreHandler() {
-    console.log(viewMore)
     if (viewMore.take >= projects.length) {
       setViewMore(preValue => (
         {
