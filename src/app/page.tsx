@@ -7,19 +7,20 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
+
 export default function page() {
 
-      return (
-            <div className="overflow-hidden bg-no-repeat bg-cover bg-site">
-                  <Header />
-                  <Banner />
-                  <Skills />
-                  <Work />
-                  <About />
-                  <Contact />
-                  <Footer />
-                  <Nav />
-            </div>
-      );
+  return (
+    <div className="overflow-hidden bg-no-repeat bg-cover bg-site">
+      <Header />
+      <Banner />
+      <Skills />
+      <Work />
+      <About />
+      <Contact />
+      <Footer />
+      <Nav />
+    </div>
+  );
 }
 
