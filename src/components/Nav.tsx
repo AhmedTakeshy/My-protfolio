@@ -1,5 +1,4 @@
 "use client"
-"use client"
 import { BiHomeAlt, BiUser, BiCode } from "react-icons/bi";
 import { BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
