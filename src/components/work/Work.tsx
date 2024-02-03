@@ -1,61 +1,81 @@
 "use client";
 import React, { useState } from "react";
-import { fadeIn } from "@/src/variants";
+import { fadeIn } from "@/src/lib/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import dynamic from 'next/dynamic'
-import { MotionDiv } from "@/src/motionsDev";
-
+import { MotionDiv } from "@/src/lib/motionsDev";
+import fajerImg from "@/public/img/fajer.webp";
+import naviroImg from "@/public/img/naviro.webp";
+import wanderlyImg from "@/public/img/wanderly.webp";
+import foodyImg from "@/public/img/foody.webp";
+import majestoImg from "@/public/img/majesto.webp";
+import yelpImg from "@/public/img/yelp.webp";
+import learnuImg from "@/public/img/learnu.webp";
+import spcImg from "@/public/img/spc.png";
+import galaxyImg from "@/public/img/galaxy.png";
+import { Project } from "@/types";
 const Project = dynamic(() => import("./Project"));
 
 const projects: Project[] = [
   {
-    src: "/img/fajer.webp",
+    src: learnuImg,
+    alt: "leanru img",
+    preTitle: "LearnU",
+    live: "https://learnu.vercel.app/",
+    code: "https://github.com/202303-PRM-TR-FEW/LearnU-Team-1",
+  },
+  {
+    src: wanderlyImg,
+    alt: "wanderly img",
+    preTitle: "Wanderly",
+    live: "https://wanderly.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Wanderly",
+  },
+  {
+    src: spcImg,
+    alt: "spc img",
+    preTitle: "SPC",
+    live: "https://spc-website.vercel.app/",
+  },
+  {
+    src: fajerImg,
     alt: "fajer-baghdad img",
     preTitle: "Fajer",
     live: "https://fajer-baghdad.vercel.app/",
   },
   {
-    src: "/img/naviro.webp",
-    alt: "naviro img",
-    preTitle: "Naviro",
-    live: "https://naviro-dashboard-prod.vercel.app/",
+    src: galaxyImg,
+    alt: "galaxy img",
+    preTitle: "Galaxy",
+    live: "https://galaxy-website.vercel.app/",
   },
   {
-    src: "/img/wanderly.webp",
-    alt: "wanderly img",
-    preTitle: "Wanderly",
-    live: "https://majesto-food.vercel.app/",
-    code: "https://github.com/AhmedTakeshy/Wanderly",
-  },
-  {
-    src: "/img/foody.webp",
+    src: foodyImg,
     alt: "foody img",
     preTitle: "Foody",
     live: "https://foody-eta.vercel.app/",
     code: "https://github.com/AhmedTakeshy/Foody",
   },
   {
-    src: "/img/majesto.webp",
+    src: majestoImg,
     alt: "majesto img",
     preTitle: "Majesto",
     live: "majesto-food.vercel.app/",
     code: "https://github.com/AhmedTakeshy/Majesto-Food",
   },
   {
-    src: "/img/yelp.webp",
+    src: yelpImg,
     alt: "YelpCampground img",
     preTitle: "YelpCampground",
     live: "https://yelp-campground.vercel.app/",
     code: "https://github.com/AhmedTakeshy/Yelp-Campground",
   },
   {
-    src: "/img/learnu.webp",
-    alt: "leanru img",
-    preTitle: "LearnU",
-    live: "https://learnu.vercel.app/",
-    code: "https://github.com/202303-PRM-TR-FEW/LearnU-Team-1",
+    src: naviroImg,
+    alt: "naviro img",
+    preTitle: "Naviro",
+    live: "https://naviro-dashboard-prod.vercel.app/",
   },
-
 ];
 
 export default function Work() {

@@ -2,10 +2,10 @@ import { FaGithub } from "react-icons/fa";
 import { RiGlobalLine } from "react-icons/ri";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type Props = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   preTitle: string;
   live: string;
@@ -26,10 +26,10 @@ export default function Project({ src, preTitle, live, code }: Props) {
         <Image
           src={src}
           alt={`${preTitle}-project`}
-          priority={false}
-          className="group-hover:object-bottom absolute inset-0 transition-all duration-[8s] ease-in-out w-full h-full object-cover object-top"
-          width={320}
-          height={350}
+          className="group-hover:object-bottom z-10 absolute inset-0 transition-all duration-[8s] ease-in-out w-full h-full object-cover object-top"
+          width={565}
+          height={316}
+          placeholder="blur"
           quality={100}
         />
         {/* overlay */}
@@ -54,18 +54,20 @@ export default function Project({ src, preTitle, live, code }: Props) {
                 href={live}
                 target={"_blank"}
                 rel="noreferrer"
+                aria-label="live link"
                 className="text-2xl hover:rotate-[360deg] transition-all duration-500"
               >
                 <RiGlobalLine />
               </Link>
-              <a
-                href={code}
+              <Link
+                href={code ?? ""}
                 target={"_blank"}
                 rel="noreferrer"
+                aria-label="code link"
                 className="text-[22px] hover:rotate-[360deg] transition-all duration-500"
               >
                 <FaGithub />
-              </a>
+              </Link>
               {/* <span className="text-3xl text-white">{title}</span> */}
             </div>
           </>
