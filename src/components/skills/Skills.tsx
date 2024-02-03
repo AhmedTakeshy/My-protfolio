@@ -6,6 +6,94 @@ import dynamic from 'next/dynamic'
 
 
 const Skill = dynamic(() => import("./Skill"));
+
+const skills = [
+  {
+    alt: "react",
+    name: "React",
+    title: "React skill meter",
+    src: "/img/meter1.svg",
+  },
+  {
+    alt: "react-router",
+    name: "React-router",
+    title: "React-router skill meter",
+    src: "/img/meter2.svg",
+  },
+  {
+    alt: "redux",
+    name: "Redux",
+    title: "Redux skill meter",
+    src: "/img/meter3.svg",
+  },
+  {
+    alt: "redux-toolkit",
+    name: "Redux-toolkit",
+    title: "Redux-toolkit skill meter",
+    src: "/img/meter1.svg",
+  },
+  {
+    alt: "nextjs",
+    name: "NextJS",
+    title: "NextJS skill meter",
+    src: "/img/meter3.svg",
+  },
+  {
+    alt: "tailwind",
+    name: "Tailwind",
+    title: "Tailwind skill meter",
+    src: "/img/meter2.svg",
+  },
+  {
+    alt: "bootstrap",
+    name: "Bootstrap",
+    title: "Bootstrap skill meter",
+    src: "/img/meter3.svg",
+  },
+  {
+    alt: "jquery",
+    name: "jQuery",
+    title: "jQuery skill meter",
+    src: "/img/meter2.svg",
+  },
+  {
+    alt: "sass",
+    name: "Sass",
+    title: "Sass skill meter",
+    src: "/img/meter1.svg",
+  },
+  {
+    alt: "prisma",
+    name: "Prisma",
+    title: "Prisma skill meter",
+    src: "/img/meter3.svg",
+  },
+  {
+    alt: "postgresql",
+    name: "PostgreSQL",
+    title: "PostgreSQL skill meter",
+    src: "/img/meter2.svg",
+  },
+  {
+    alt: "html5",
+    name: "HTML5 & CSS3",
+    title: "HTML5 & CSS3 skill meter",
+    src: "/img/meter1.svg",
+  },
+  {
+    alt: "javascript",
+    name: "Javascript",
+    title: "Javascript skill meter",
+    src: "/img/meter3.svg",
+  },
+  {
+    alt: "typescript",
+    name: "Typescript",
+    title: "Typescript skill meter",
+    src: "/img/meter2.svg",
+  },
+]
+
 export default function Skills() {
   const responsive: ResponsiveType = {
     superLargeDesktop: {
@@ -29,30 +117,24 @@ export default function Skills() {
     <section className="section pb-[50px] mt-8 flex justify-center" id="skills">
       <div className="container max-auto">
         <div className="bg-black shadow-xl transition-shadow duration-500 hover:shadow-[#B809C3] rounded-2xl text-center py-[60px] px-[50px] lg:mt-[-60px]">
-          <h2 className="font-bold text-[45px] tracking-wider pointer-events-none">
+          <h2 className="font-bold text-[45px] tracking-wider pointer-events-none mb-24">
             Skills
           </h2>
-          <p className=" text-[#b8b8b8] text-lg leading-6 tracking-[0.8] mt-[14px] mb-20"></p>
           <Carousel
             responsive={responsive}
             infinite={true}
             autoPlay={true}
-            className=" w-[80%] mx-auto"
+            className="w-[80%] mx-auto"
           >
-            <Skill src="/img/meter1.svg" alt="react meter" name="HTML5 & CSS3" />
-            <Skill src="/img/meter3.svg" alt="tailwind meter" name="Javascript" />
-            <Skill src="/img/meter2.svg" alt="typescript meter" name="Typescript" />
-            <Skill src="/img/meter1.svg" alt="sass meter" name="Sass" />
-            <Skill src="/img/meter2.svg" alt="node meter" name="ReactJs" />
-            <Skill src="/img/meter3.svg" alt="react-router meter" name="React-router" />
-            <Skill src="/img/meter2.svg" alt="jquery meter" name="jQuery" />
-            <Skill src="/img/meter3.svg" alt="tailwind meter" name="Tailwind" />
-            <Skill src="/img/meter1.svg" alt="bootstrap meter" name="Bootstrap" />
-            <Skill src="/img/meter2.svg" alt="nextjs meter" name="NextJS" />
-            <Skill src="/img/meter1.svg" alt="redux-toolkit meter" name="Redux-toolkit" />
-            <Skill src="/img/meter3.svg" alt="redux meter" name="Redux" />
-            <Skill src="/img/meter1.svg" alt="Prisma meter" name="Prisma" />
-            <Skill src="/img/meter2.svg" alt="PostgreSQL meter" name="PostgreSQL" />
+            {skills.map((skill) => (
+              <Skill
+                key={skill.alt}
+                src={skill.src}
+                alt={skill.alt}
+                name={skill.name}
+                title={skill.title}
+              />
+            ))}
           </Carousel>
         </div>
       </div>
