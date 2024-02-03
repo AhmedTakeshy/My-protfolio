@@ -4,20 +4,14 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link as LinkRs } from "react-scroll";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import { fadeIn } from "../variants";
-import { MotionDiv, MotionH1, MotionP } from "../motionsDev";
+import { fadeIn } from "../lib/variants";
+import { MotionDiv, MotionH1, MotionP } from "../lib/motionsDev";
 import Header from "./Header";
-
-type BannerProps = {
-  blurDataURLBanner: string;
-  bannerImg: string;
-  blurDataURLHeader: string;
-  headerImg: string;
-
-}
+import bannerImg from "@/public/img/banner.webp";
+import headerImg from "@/public/img/header.svg";
 
 
-export default function Banner({ blurDataURLBanner, bannerImg, blurDataURLHeader, headerImg }: BannerProps) {
+export default function Banner() {
 
 
   return (
@@ -25,7 +19,7 @@ export default function Banner({ blurDataURLBanner, bannerImg, blurDataURLHeader
       className="relative flex items-center h-screen overflow-hidden"
       id="home"
     >
-      <Image src={bannerImg} blurDataURL={blurDataURLBanner} className="z-[-1] object-cover" alt="Banner background" fill placeholder="blur" />
+      <Image src={bannerImg} className="z-[-1] object-cover" alt="Banner background" fill placeholder="blur" priority />
       <div className="container mx-auto">
         <Header />
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
@@ -121,7 +115,7 @@ export default function Banner({ blurDataURLBanner, bannerImg, blurDataURLHeader
             whileInView={"show"}
             className="hidden lg:flex flex-1 max-w-[320px] lg:mx-w-[482]"
           >
-            <Image width={300} height={300} src={headerImg} placeholder="blur" blurDataURL={blurDataURLHeader} alt="header img" className="w-auto h-auto img" />
+            <Image width={300} height={300} src={headerImg} priority alt="header img" className="w-auto h-auto img" />
           </MotionDiv>
         </div>
       </div>
