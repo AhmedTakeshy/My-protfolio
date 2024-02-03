@@ -29,6 +29,7 @@ export default function Project({ src, preTitle, live, code }: Props) {
           className="group-hover:object-bottom z-10 absolute inset-0 transition-all duration-[8s] ease-in-out w-full h-full object-cover object-top"
           width={565}
           height={316}
+          priority={true}
           placeholder="blur"
           quality={100}
         />
