@@ -1,9 +1,10 @@
 "use client"
 import { useInView } from "react-intersection-observer";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../lib/variants";
 import CountUp from "react-countup";
-import { MotionDiv } from "../motionsDev";
-
+import { MotionDiv } from "../lib/motionsDev";
+import aboutImg from "@/public/img/about.webp";
+import Image from "next/image";
 
 
 export default function About() {
@@ -21,7 +22,17 @@ export default function About() {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="bg-none flex-1 lg:bg-about bg-no-repeat h-[40rem] bg-top" />
+            className="flex-1 hidden lg:inline-block" >
+            <Image
+              src={aboutImg}
+              width={545}
+              height={640}
+              alt="about image"
+              className="object-cover object-top w-full h-full"
+              placeholder="blur"
+              quality={100}
+            />
+          </MotionDiv>
           <MotionDiv
             variants={fadeIn("left", 0.5)}
             initial="hidden"
