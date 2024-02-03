@@ -1,6 +1,5 @@
 
 import Image from "next/image";
-
 type Props = {
   src: string;
   alt: string;
@@ -18,7 +17,6 @@ export default async function Skill({ src, title, alt, name }: Props) {
         src={src}
         alt={alt}
         title={title}
-        placeholder="blur"
         className="w-[45%] mb-6"
       />
       <span className="font-semibold tracking-widest">
