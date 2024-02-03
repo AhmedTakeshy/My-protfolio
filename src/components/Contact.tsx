@@ -4,11 +4,11 @@ import useInput from "../hooks/use-input";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast, ToastOptions } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../lib/variants";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp, BsMessenger } from "react-icons/bs";
 import Link from "next/link";
-import { MotionDiv, MotionForm } from "../motionsDev";
+import { MotionDiv, MotionForm } from "../lib/motionsDev";
 
 
 const toastConfig: ToastOptions = {
@@ -171,8 +171,8 @@ export default function Contact() {
             </button>
             <div className="flex items-center gap-x-6">
               <Link
-                aria-label="email"
-                aria-description="email link"
+                aria-label="Email me!"
+                aria-details="email link"
                 title="link to my email"
                 href="mailto:ahmedtakeshy@gmail.com">
                 <HiOutlineMail
@@ -184,8 +184,8 @@ export default function Contact() {
                 href="https://api.whatsapp.com/send?phone=905511635796"
                 target={"_blank"}
                 rel="noreferrer noopener"
-                aria-label="whatsapp"
-                aria-description="whatsapp link"
+                aria-label="Whatsapp link"
+                aria-details="whatsapp link"
                 title="link to my whatsapp"
               >
                 <BsWhatsapp
@@ -197,8 +197,8 @@ export default function Contact() {
                 href="https://m.me/ahmed.takeshy.1"
                 target={"_blank"}
                 rel="noreferrer noopener"
-                aria-label="messenger"
-                aria-description="messenger link"
+                aria-label="Messenger link"
+                aria-details="messenger link"
                 title="link to my messenger"
               >
                 <BsMessenger
