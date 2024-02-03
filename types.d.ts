@@ -1,5 +1,7 @@
+import { StaticImageData } from "next/image";
+
 type Project = {
-    src: string;
+    src: StaticImageData;
     alt: string;
     preTitle: string;
     live: string;
