@@ -17,13 +17,15 @@ export default function Nav() {
             offset={-200}
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="home"
-            aria-description="link to home section"
+            aria-label="Home icon"
+            role="link"
+            aria-details="link to home section"
             title="link to home section"
           >
             <BiHomeAlt
               aria-label="icon"
-              aria-description="home icon"
+              aria-details="home icon"
+              role="img"
             />
           </Link>
           <Link
@@ -32,13 +34,15 @@ export default function Nav() {
             smooth={true}
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="skills"
-            aria-description="link to skills section"
+            aria-label="Skills icons"
+            role="link"
+            aria-details="link to skills section"
             title="link to skills section"
           >
             <BiCode
               aria-label="icon"
-              aria-description="code icon"
+              aria-details="code icon"
+              role="img"
             />
           </Link>
           <Link
@@ -47,13 +51,15 @@ export default function Nav() {
             smooth={true}
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="work"
-            aria-description="link to work section"
+            aria-label="Work icon"
+            role="link"
+            aria-details="link to work section"
             title="link to work section"
           >
             <BsBriefcase
               aria-label="icon"
-              aria-description="briefcase icon"
+              aria-details="briefcase icon"
+              role="img"
             />
           </Link>
           <Link
@@ -63,12 +69,14 @@ export default function Nav() {
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
             aria-label="about"
-            aria-description="link to about section"
+            role="link"
+            aria-details="link to about section"
             title="link to about section"
           >
             <BiUser
               aria-label="icon"
-              aria-description="user icon"
+              aria-details="user icon"
+              role="img"
             />
           </Link>
           <Link
@@ -78,12 +86,14 @@ export default function Nav() {
             spy={true}
             className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
             aria-label="contact"
-            aria-description="link to contact section"
+            role="link"
+            aria-details="link to contact section"
             title="link to contact section"
           >
             <BsChatSquare
               aria-label="icon"
-              aria-description="chat icon"
+              aria-details="chat icon"
+              role="img"
             />
           </Link>
         </div>
