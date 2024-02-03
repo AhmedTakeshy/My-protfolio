@@ -71,7 +71,7 @@ export default function Banner() {
               <LinkRs className="flex items-center justify-center btn btn-lg hover:cursor-pointer" role="link" to="contact" title="link to contact section for contact from" smooth={true} aria-label="Contact me" aria-details="link to contact section for contact form">
                 Contact Me
               </LinkRs>
-              <Link className="text-gradient btn-link" href="/Ahmed.pdf" title="link to download my resume" aria-label="My Resume" download target="_blank" rel="noopener noreferrer" aria-details="link to download my resume">
+              <Link className="text-gradient btn-link" href="/Ahmed.pdf" locale={false} title="link to download my resume" aria-label="My Resume" download target="_blank" rel="noopener noreferrer" aria-details="link to download my resume">
                 My Resume
               </Link>
             </MotionDiv>
