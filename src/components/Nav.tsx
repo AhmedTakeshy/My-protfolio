@@ -4,8 +4,8 @@ import { BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
 export default function Nav() {
   return (
-    <nav className="fixed z-50 w-full overflow-hidden bottom-3 lg:bottom-8">
-      <div className="container mx-auto">
+    <nav className="container fixed z-50 w-full overflow-hidden bottom-3 lg:bottom-8">
+      <div className="mx-auto">
         <div
           className="w-full bg-black/25 backdrop-blur-[10px] rounded-full max-w-[460px] 
         mx-auto px-5 py-3 flex justify-between items-center text-2xl text-white/50"

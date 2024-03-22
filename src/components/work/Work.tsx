@@ -141,7 +141,7 @@ export default function Work() {
           </MotionDiv>
           {projects.map((project, index) => (
             <MotionDiv
-              variants={fadeIn("left", 0.3)}
+              variants={fadeIn("right", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}

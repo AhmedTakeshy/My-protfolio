@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Orbitron, Rajdhani, Aldrich } from "next/font/google";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import React, { Children } from "react";
 
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"], display: "swap", variable: "--font-orbitron" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap", variable: "--font-rajdhani" });
@@ -116,12 +117,12 @@ export const metadata: Metadata = {
   },
 };
 
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
+
   return (
     <html lang="en">
       <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>

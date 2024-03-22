@@ -114,7 +114,7 @@ export default function Skills() {
     },
   };
   return (
-    <section className="section pb-[50px] mt-8 flex justify-center" id="skills">
+    <section className="section pb-[50px] mt-8 flex justify-center " id="skills">
       <div className="container max-auto">
         <div className="bg-black shadow-xl transition-shadow duration-500 hover:shadow-[#B809C3] rounded-2xl text-center py-[60px] px-[50px] lg:mt-[-60px]">
           <h2 className="font-bold text-[45px] tracking-wider pointer-events-none mb-24">

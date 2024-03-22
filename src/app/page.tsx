@@ -9,6 +9,7 @@ import Image from 'next/image';
 import siteImg from "@/public/site-bg.webp";
 export default async function page() {
 
+
   return (
     <div className="relative">
       <Image
