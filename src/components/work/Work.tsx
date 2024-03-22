@@ -13,10 +13,9 @@ import yelpImg from "@/public/img/yelp.webp";
 import learnuImg from "@/public/img/learnu.webp";
 import spcImg from "@/public/img/spc.png";
 import galaxyImg from "@/public/img/galaxy.png";
-import { Project } from "@/types";
-const Project = dynamic(() => import("./Project"));
+const Project = dynamic(() => import("./Project"))
 
-const projects: Project[] = [
+const projects = [
   {
     src: learnuImg,
     alt: "leanru img",
