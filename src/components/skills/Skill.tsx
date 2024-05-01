@@ -1,13 +1,13 @@
 
 import Image from "next/image";
-type Props = {
+type SkillProps = {
   src: string;
   alt: string;
   name: string;
   title: string;
 }
 
-export default async function Skill({ src, title, alt, name }: Props) {
+export default function Skill({ src, title, alt, name }: SkillProps) {
 
   return (
     <div className="flex flex-col items-center ">

@@ -7,8 +7,8 @@ import { TypeAnimation } from "react-type-animation";
 import { fadeIn } from "../lib/variants";
 import { MotionDiv, MotionH1, MotionP } from "../lib/motionsDev";
 import Header from "./Header";
-import bannerImg from "@/public/img/banner.webp";
-import headerImg from "@/public/img/header.svg";
+import bannerImg from "@/../public/img/banner.webp";
+import headerImg from "@/../public/img/header.svg";
 
 
 export default function Banner() {

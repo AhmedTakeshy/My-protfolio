@@ -6,7 +6,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Image from 'next/image';
-import siteImg from "@/public/site-bg.webp";
+import siteImg from "@/../public/site-bg.webp";
 export default async function page() {
 
 
@@ -19,7 +19,8 @@ export default async function page() {
         className='object-cover z-[-2]'
         placeholder='blur'
         priority={true}
-        sizes='100vw' />
+        sizes='100vw'
+      />
       <Banner />
       <Skills />
       <Work />

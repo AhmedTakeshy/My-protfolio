@@ -4,7 +4,7 @@ import { BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
 export default function Nav() {
   return (
-    <nav className="container fixed z-50 w-full overflow-hidden bottom-3 lg:bottom-8">
+    <nav className="fixed z-50 w-full px-4 overflow-hidden bottom-3 lg:bottom-8">
       <div className="mx-auto">
         <div
           className="w-full bg-black/25 backdrop-blur-[10px] rounded-full max-w-[460px] 
@@ -21,6 +21,7 @@ export default function Nav() {
             role="link"
             aria-details="link to home section"
             title="link to home section"
+            label="home icon"
           >
             <BiHomeAlt
               aria-label="icon"
@@ -38,6 +39,7 @@ export default function Nav() {
             role="link"
             aria-details="link to skills section"
             title="link to skills section"
+            label="skills icon"
           >
             <BiCode
               aria-label="icon"
@@ -55,6 +57,7 @@ export default function Nav() {
             role="link"
             aria-details="link to work section"
             title="link to work section"
+            label="work icon"
           >
             <BsBriefcase
               aria-label="icon"
@@ -72,6 +75,7 @@ export default function Nav() {
             role="link"
             aria-details="link to about section"
             title="link to about section"
+            label="about icon"
           >
             <BiUser
               aria-label="icon"
@@ -89,6 +93,7 @@ export default function Nav() {
             role="link"
             aria-details="link to contact section"
             title="link to contact section"
+            label="contact icon"
           >
             <BsChatSquare
               aria-label="icon"

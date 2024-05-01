@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { fadeIn } from "../lib/variants";
 import CountUp from "react-countup";
 import { MotionDiv } from "../lib/motionsDev";
-import aboutImg from "@/public/img/about.webp";
+import aboutImg from "@/../public/img/about.webp";
 import Image from "next/image";
 
 
@@ -18,7 +18,7 @@ export default function About() {
           className="flex flex-col h-screen gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0"
         >
           <MotionDiv
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("left", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
@@ -34,7 +34,7 @@ export default function About() {
             />
           </MotionDiv>
           <MotionDiv
-            variants={fadeIn("left", 0.5)}
+            variants={fadeIn("right", 0.5)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}

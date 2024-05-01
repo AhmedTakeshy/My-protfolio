@@ -1,18 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import { fadeIn } from "@/src/lib/variants";
+import { fadeIn } from "@/lib/variants";
 import { BsArrowRightCircle } from "react-icons/bs";
 import dynamic from 'next/dynamic'
-import { MotionDiv } from "@/src/lib/motionsDev";
-import fajerImg from "@/public/img/fajer.webp";
-import naviroImg from "@/public/img/naviro.webp";
-import wanderlyImg from "@/public/img/wanderly.webp";
-import foodyImg from "@/public/img/foody.webp";
-import majestoImg from "@/public/img/majesto.webp";
-import yelpImg from "@/public/img/yelp.webp";
-import learnuImg from "@/public/img/learnu.webp";
-import spcImg from "@/public/img/spc.png";
-import galaxyImg from "@/public/img/galaxy.png";
+import { MotionDiv } from "@/lib/motionsDev";
+import fajerImg from "@/../public/img/fajer.webp";
+import naviroImg from "@/../public/img/naviro.webp";
+import wanderlyImg from "@/../public/img/wanderly.webp";
+import foodyImg from "@/../public/img/foody.webp";
+import majestoImg from "@/../public/img/majesto.webp";
+import yelpImg from "@/../public/img/yelp.webp";
+import learnuImg from "@/../public/img/learnu.webp";
+import spcImg from "@/../public/img/spc.png";
+import galaxyImg from "@/../public/img/galaxy.png";
 const Project = dynamic(() => import("./Project"))
 
 const projects = [
@@ -144,7 +144,7 @@ export default function Work() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex flex-col flex-1 gap-y-10"
+              className="flex flex-col flex-1 gap-y-10 place-self-center"
               key={index}
             >
               <Project
