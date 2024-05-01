@@ -1,7 +1,5 @@
 "use client"
-import React, { FormEventHandler, useRef } from "react";
-import useInput from "../hooks/use-input";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { ToastContainer, toast, ToastOptions } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { fadeIn } from "../lib/variants";
@@ -9,6 +7,12 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp, BsMessenger } from "react-icons/bs";
 import Link from "next/link";
 import { MotionDiv, MotionForm } from "../lib/motionsDev";
+import { ContactSchema, contactSchema } from "@/lib/formSchemas";
+import { contactFormAction } from "@/_actions/contactActions";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Form, FormControl, FormField, FormMessage, FormItem } from "@/components/ui/form"
+import { ImSpinner9 } from 'react-icons/im'
 
 
 const toastConfig: ToastOptions = {
@@ -23,79 +27,45 @@ const toastConfig: ToastOptions = {
 };
 
 export default function Contact() {
-  const form = useRef<HTMLFormElement>(null);
+  const [isPending, setIsPending] = useState(false);
 
-  const inputIsNotEmpty = (value: string): boolean => value.trim().length > 0;
-  const emailIsNotEmpty = (value: string): boolean =>
-    value.includes("@") && value.trim().length > 1;
+  const form = useForm<ContactSchema>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  })
 
-  const {
-    value: enteredName,
-    isValid: nameInputIsValid,
-    hasError: nameInputHasError,
-    valueChangeHandler: nameChangeHandler,
-    inputBlurHandler: nameBlurHandler,
-    reset: resetNameInput,
-  } = useInput(inputIsNotEmpty);
 
-  const {
-    value: enteredEmail,
-    isValid: emailInputIsValid,
-    hasError: emailInputHasError,
-    valueChangeHandler: emailChangeHandler,
-    inputBlurHandler: emailBlurHandler,
-    reset: resetEmailInput,
-  } = useInput(emailIsNotEmpty);
+  async function submitContact(data: ContactSchema) {
+    setIsPending(true)
+    try {
+      const result = await contactSchema.safeParseAsync(data)
+      if (!result.success) {
+        setIsPending(false)
+        return
+      }
 
-  const {
-    value: enteredMessage,
-    isValid: messageInputIsValid,
-    hasError: messageInputHasError,
-    valueChangeHandler: messageChangeHandler,
-    inputBlurHandler: messageBlurHandler,
-    reset: resetMessageInput,
-  } = useInput(inputIsNotEmpty);
-
-  let isFormValid = false;
-  if (nameInputIsValid && emailInputIsValid && messageInputIsValid) {
-    isFormValid = true;
-  }
-
-  const formSubmitHandler: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-    if (!isFormValid) {
-      return;
+      const res = await contactFormAction(result.data)
+      if (res.statusCode === 200) {
+        form.reset()
+        toast.success("Contact form submitted successfully", toastConfig)
+      }
+    } catch (error) {
+      toast.error("Error", toastConfig)
     }
-
-    resetNameInput();
-    resetEmailInput();
-    resetMessageInput();
-
-    console.log("Form submitted");
-    emailjs
-      .sendForm(
-        "service_edqe2lb",
-        "template_bcf4t7l",
-        form.current as unknown as HTMLFormElement,
-        "H7vIAHifEiSRhOFza"
-      )
-      .then(
-        (result) => {
-          toast.success("Your message has been received!", toastConfig);
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Something went wrong!", toastConfig);
-        }
-      );
-  };
+    setIsPending(false)
+  }
 
   return (
     <section className="py-16 lg:section" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <MotionDiv
-            variants={fadeIn("right", 0.3)}
+            variants={fadeIn("down", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
@@ -111,107 +81,129 @@ export default function Contact() {
               </h2>
             </div>
           </MotionDiv>
-          <MotionForm
-            ref={form}
-            variants={fadeIn("left", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            onSubmit={formSubmitHandler}
-            className="flex flex-col items-start flex-1 p-6 pb-24 border shadow-md rounded-2xl gap-y-6 shadow-white "
-          >
-            <input
-              className={` !bg-transparent border-b py-3 outline-none w-full
-              ${nameInputHasError
-                  ? "placeholder:text-pink-600"
-                  : "placeholder:text-white"
-                } focus:border-accent transition-all `}
-              type="text"
-              name="name"
-              value={enteredName}
-              placeholder={`${nameInputHasError ? "Must NOT be empty!" : "Your Name"
-                }`}
-              onChange={nameChangeHandler}
-              onBlur={nameBlurHandler}
-              required
-            />
-            <input
-              className={` !bg-transparent border-b py-3 outline-none w-full
-               ${emailInputHasError
-                  ? "placeholder:text-pink-600"
-                  : "placeholder:text-white"
-                } focus:border-accent transition-all `}
-              type="email"
-              name="email"
-              value={enteredEmail}
-              placeholder={`${emailInputHasError ? "Must NOT be empty!" : "Your Email"
-                }`}
-              onChange={emailChangeHandler}
-              onBlur={emailBlurHandler}
-              required
-            />
-            <textarea
-              className={`!bg-transparent border-b py-3 outline-none w-full
-              ${messageInputHasError
-                  ? "placeholder:text-pink-600"
-                  : "placeholder:text-white"
-                } focus:border-accent transition-all resize-none mb-12 `}
-              name="message"
-              value={enteredMessage}
-              placeholder={`${messageInputHasError ? "Must NOT be empty!" : "Your Message"
-                }`}
-              onChange={messageChangeHandler}
-              onBlur={messageBlurHandler}
-              required
-              spellCheck={true}
-            />
-
-            <button type="submit" className="btn btn-lg">
-              Send message
-            </button>
-            <div className="flex items-center gap-x-6">
-              <Link
-                aria-label="Email me!"
-                aria-details="email link"
-                title="link to my email"
-                href="mailto:ahmedtakeshy@gmail.com">
-                <HiOutlineMail
-                  aria-label="icon"
-                  aria-description="icon for email"
-                  className="text-[1.75rem]" />
-              </Link>
-              <Link
-                href="https://api.whatsapp.com/send?phone=905511635796"
-                target={"_blank"}
-                rel="noreferrer noopener"
-                aria-label="Whatsapp link"
-                aria-details="whatsapp link"
-                title="link to my whatsapp"
-              >
-                <BsWhatsapp
-                  aria-label="icon"
-                  aria-description="icon for whatsapp"
-                  className="text-[1.5rem]" />
-              </Link>
-              <Link
-                href="https://m.me/ahmed.takeshy.1"
-                target={"_blank"}
-                rel="noreferrer noopener"
-                aria-label="Messenger link"
-                aria-details="messenger link"
-                title="link to my messenger"
-              >
-                <BsMessenger
-                  aria-label="icon"
-                  aria-description="icon for messenger"
-                  className="text-[1.5rem]" />
-              </Link>
-            </div>
-          </MotionForm>
+          <Form {...form}>
+            <MotionForm
+              variants={fadeIn("up", 0.3)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.3 }}
+              onSubmit={form.handleSubmit(submitContact)}
+              className="flex flex-col items-start flex-1 p-6 pb-24 border shadow-md rounded-2xl gap-y-6 shadow-white "
+            >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <input
+                        {...field}
+                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        type="text"
+                        placeholder={`Full name*`}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <input
+                        {...field}
+                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        type="email"
+                        placeholder={`Email*`}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <input
+                        {...field}
+                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        type="text"
+                        placeholder={`Topic`}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <textarea
+                        {...field}
+                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all resize-none mb-12 `}
+                        placeholder={`Message...`}
+                        spellCheck={true}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <button type="submit" className="btn btn-lg">
+                {isPending ? <ImSpinner9 className={`ease-in-out animate-spin `} /> : "Send message"}
+              </button>
+              <div className="flex items-center gap-x-6">
+                <Link
+                  aria-label="Email me!"
+                  aria-details="email link"
+                  title="link to my email"
+                  href="mailto:ahmedtakeshy@gmail.com">
+                  <HiOutlineMail
+                    aria-label="icon"
+                    aria-description="icon for email"
+                    className="text-[1.75rem]" />
+                </Link>
+                <Link
+                  href="https://api.whatsapp.com/send?phone=905511635796"
+                  target={"_blank"}
+                  rel="noreferrer noopener"
+                  aria-label="Whatsapp link"
+                  aria-details="whatsapp link"
+                  title="link to my whatsapp"
+                >
+                  <BsWhatsapp
+                    aria-label="icon"
+                    aria-description="icon for whatsapp"
+                    className="text-[1.5rem]" />
+                </Link>
+                <Link
+                  href="https://m.me/ahmed.takeshy.1"
+                  target={"_blank"}
+                  rel="noreferrer noopener"
+                  aria-label="Messenger link"
+                  aria-details="messenger link"
+                  title="link to my messenger"
+                >
+                  <BsMessenger
+                    aria-label="icon"
+                    aria-description="icon for messenger"
+                    className="text-[1.5rem]" />
+                </Link>
+              </div>
+            </MotionForm>
+          </Form>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </section>
   );
 };
-
