@@ -1,4 +1,6 @@
-import { StaticImageData } from "next/image";
+type ServerResponse<T> =
+    { successMessage: string, data: T; status: "Success"; statusCode: number } |
+    { errorMessage: string; status: "Error"; statusCode: number };
 
 type Project = {
     src: StaticImageData;
