@@ -55,7 +55,7 @@ export default function About() {
             <div className="flex mb-12 gap-x-6 lg:gap-x-10">
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={3} duration={2} /> : null}+
+                  {inView ? <CountUp start={0} end={3} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Years of <br /> Experience
@@ -63,7 +63,7 @@ export default function About() {
               </div>
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={30} duration={4} /> : null}+
+                  {inView ? <CountUp start={0} end={30} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Projects <br /> Completed
@@ -71,7 +71,7 @@ export default function About() {
               </div>
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={15} duration={4} /> : null}+
+                  {inView ? <CountUp start={0} end={15} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Satisfied <br /> Clients
