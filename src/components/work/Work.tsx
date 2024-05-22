@@ -13,9 +13,45 @@ import yelpImg from "@/../public/img/yelp.webp";
 import learnuImg from "@/../public/img/learnu.webp";
 import spcImg from "@/../public/img/spc.png";
 import galaxyImg from "@/../public/img/galaxy.png";
+import powerImg from "@/../public/img/power.png";
 const Project = dynamic(() => import("./Project"))
 
-const projects = [
+const projects: Projects[] = [
+  {
+    src: foodyImg,
+    alt: "foody img",
+    preTitle: "Foody",
+    live: "https://foody-eta.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Foody",
+    videoLink: "https://youtu.be/92MDcPyCO38",
+  },
+  {
+    src: powerImg,
+    alt: "power img",
+    preTitle: "Power Gym",
+    live: "https://power--gym.vercel.app/",
+    videoLink: "https://youtu.be/3C2S-mVIwhk",
+  },
+  {
+    src: wanderlyImg,
+    alt: "wanderly img",
+    preTitle: "Wanderly",
+    live: "https://wanderly.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Wanderly",
+    videoLink: "https://youtu.be/-wIxIfNhs4s",
+  },
+  {
+    src: spcImg,
+    alt: "spc img",
+    preTitle: "SPC Academy",
+    live: "https://spc-eg.com",
+  },
+  {
+    src: fajerImg,
+    alt: "fajer-baghdad img",
+    preTitle: "Fajer Baghdad",
+    live: "https://fajer-baghdad.vercel.app/",
+  },
   {
     src: learnuImg,
     alt: "leanru img",
@@ -24,44 +60,12 @@ const projects = [
     code: "https://github.com/202303-PRM-TR-FEW/LearnU-Team-1",
   },
   {
-    src: wanderlyImg,
-    alt: "wanderly img",
-    preTitle: "Wanderly",
-    live: "https://wanderly.vercel.app/",
-    code: "https://github.com/AhmedTakeshy/Wanderly",
-  },
-  {
-    src: spcImg,
-    alt: "spc img",
-    preTitle: "SPC",
-    live: "https://spc-website.vercel.app/",
-  },
-  {
-    src: fajerImg,
-    alt: "fajer-baghdad img",
-    preTitle: "Fajer",
-    live: "https://fajer-baghdad.vercel.app/",
-  },
-  {
     src: galaxyImg,
     alt: "galaxy img",
-    preTitle: "Galaxy",
-    live: "https://galaxy-website.vercel.app/",
+    preTitle: "Galaxy Academy",
+    live: "https://www.galaxyacademy.net/",
   },
-  {
-    src: foodyImg,
-    alt: "foody img",
-    preTitle: "Foody",
-    live: "https://foody-eta.vercel.app/",
-    code: "https://github.com/AhmedTakeshy/Foody",
-  },
-  {
-    src: majestoImg,
-    alt: "majesto img",
-    preTitle: "Majesto",
-    live: "majesto-food.vercel.app/",
-    code: "https://github.com/AhmedTakeshy/Majesto-Food",
-  },
+
   {
     src: yelpImg,
     alt: "YelpCampground img",
@@ -154,6 +158,7 @@ export default function Work() {
                 preTitle={project.preTitle}
                 live={project.live}
                 code={project.code}
+                videoLink={project.videoLink}
               />
             </MotionDiv>
           )).slice(viewMore.skip, viewMore.take)}

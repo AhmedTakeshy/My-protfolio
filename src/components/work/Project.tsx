@@ -1,19 +1,13 @@
-import { FaGithub } from "react-icons/fa";
-import { RiGlobalLine } from "react-icons/ri";
+import { FaGithub, FaLink, FaYoutube, } from "react-icons/fa";
+import { FiYoutube } from "react-icons/fi";
 import Link from "next/link";
 import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
-
-type Props = {
-  src: StaticImageData;
-  alt: string;
-  preTitle: string;
-  live: string;
-  code?: string;
-}
+import Image from "next/image";
 
 
-export default function Project({ src, preTitle, live, code }: Props) {
+
+export default function Project({ src, preTitle, live, code, videoLink }: Projects) {
+
   const [showLinks, setShowLinks] = useState<boolean>(false);
   return (
     <>
@@ -56,24 +50,28 @@ export default function Project({ src, preTitle, live, code }: Props) {
                 target={"_blank"}
                 rel="noreferrer"
                 aria-label="live link"
-                className="text-2xl hover:rotate-[360deg] transition-all duration-500"
               >
-                <RiGlobalLine />
+                <FaLink className="text-xl hover:text-sky-400 hover:scale-125 transition-all duration-500" size={20} />
               </Link>
               <Link
-                href={code ?? ""}
-                target={"_blank"}
+                href={code ?? "#work"}
+                target={code ? "_blank" : "_self"}
                 rel="noreferrer"
                 aria-label="code link"
-                className="text-[22px] hover:rotate-[360deg] transition-all duration-500"
               >
-                <FaGithub />
+                <FaGithub className={`${code ? "hover:text-black hover:scale-125 rounded-2xl border-none hover:bg-white transition-all duration-500" : " cursor-not-allowed"}`} size={22} />
               </Link>
-              {/* <span className="text-3xl text-white">{title}</span> */}
+              <Link
+                href={videoLink ?? "#work"}
+                target={videoLink ? "_blank" : "_self"}
+                rel="noreferrer"
+                aria-label="code link"
+              >
+                <FaYoutube className={`${videoLink ? "hover:scale-125 hover:text-red-500 transition-all duration-500" : "cursor-not-allowed"} `} size={25} />
+              </Link>
             </div>
           </>
         )}
-
       </div>
     </>
   );
