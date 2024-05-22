@@ -1,5 +1,4 @@
 import { FaGithub, FaLink, FaYoutube, } from "react-icons/fa";
-import { FiYoutube } from "react-icons/fi";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -7,8 +6,8 @@ import Image from "next/image";
 
 
 export default function Project({ src, preTitle, live, code, videoLink }: Projects) {
-
   const [showLinks, setShowLinks] = useState<boolean>(false);
+
   return (
     <>
       {/* image */}
@@ -41,10 +40,9 @@ export default function Project({ src, preTitle, live, code, videoLink }: Projec
                 {preTitle}
               </span>
             </div>
+
             {/* title */}
-            <div
-              className="absolute z-50 flex items-center transition-all duration-500 -bottom-full left-12 group-hover:bottom-14 gap-x-4"
-            >
+            <div className="absolute z-50 flex items-center transition-all duration-500 -bottom-full left-12 group-hover:bottom-14 gap-x-4">
               <Link
                 href={live}
                 target={"_blank"}
