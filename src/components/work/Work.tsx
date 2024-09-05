@@ -23,14 +23,6 @@ const projects: Projects[] = [
     live: "horeca-ecommerce.vercel.app",
   },
   {
-    src: foodyImg,
-    alt: "foody img",
-    preTitle: "Foody",
-    live: "https://foody-eta.vercel.app/",
-    code: "https://github.com/AhmedTakeshy/Foody",
-    videoLink: "https://youtu.be/92MDcPyCO38",
-  },
-  {
     src: powerImg,
     alt: "power img",
     preTitle: "Power Gym",
@@ -50,6 +42,14 @@ const projects: Projects[] = [
     alt: "spc img",
     preTitle: "SPC Academy",
     live: "https://spc-eg.com",
+  },
+  {
+    src: foodyImg,
+    alt: "foody img",
+    preTitle: "Foody",
+    live: "https://foody-eta.vercel.app/",
+    code: "https://github.com/AhmedTakeshy/Foody",
+    videoLink: "https://youtu.be/92MDcPyCO38",
   },
   {
     src: fajerImg,
@@ -78,7 +78,6 @@ const projects: Projects[] = [
     live: "https://yelp-campground.vercel.app/",
     code: "https://github.com/AhmedTakeshy/Yelp-Campground",
   },
-
 ];
 
 export default function Work() {
