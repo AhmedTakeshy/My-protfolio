@@ -5,10 +5,9 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import dynamic from 'next/dynamic'
 import { MotionDiv } from "@/lib/motionsDev";
 import fajerImg from "@/../public/img/fajer.webp";
-import naviroImg from "@/../public/img/naviro.webp";
 import wanderlyImg from "@/../public/img/wanderly.webp";
 import foodyImg from "@/../public/img/foody.webp";
-import majestoImg from "@/../public/img/majesto.webp";
+import horecaImg from "@/../public/img/horeca.png";
 import yelpImg from "@/../public/img/yelp.webp";
 import learnuImg from "@/../public/img/learnu.webp";
 import spcImg from "@/../public/img/spc.png";
@@ -17,6 +16,12 @@ import powerImg from "@/../public/img/power.png";
 const Project = dynamic(() => import("./Project"))
 
 const projects: Projects[] = [
+  {
+    src: horecaImg,
+    alt: "horeca img",
+    preTitle: "Horeca e-commerce",
+    live: "horeca-ecommerce.vercel.app",
+  },
   {
     src: foodyImg,
     alt: "foody img",
@@ -73,12 +78,7 @@ const projects: Projects[] = [
     live: "https://yelp-campground.vercel.app/",
     code: "https://github.com/AhmedTakeshy/Yelp-Campground",
   },
-  {
-    src: naviroImg,
-    alt: "naviro img",
-    preTitle: "Naviro",
-    live: "https://naviro-dashboard-prod.vercel.app/",
-  },
+
 ];
 
 export default function Work() {
