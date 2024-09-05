@@ -20,7 +20,8 @@ const projects: Projects[] = [
     src: horecaImg,
     alt: "horeca img",
     preTitle: "Horeca e-commerce",
-    live: "horeca-ecommerce.vercel.app",
+    live: "https://horeca-ecommerce.vercel.app",
+    code: "https://github.com/AhmedTakeshy/HoReCa",
   },
   {
     src: powerImg,
