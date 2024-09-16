@@ -17,16 +17,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://takeshy.works",
+    url: "https://takeshy.tech",
     title: "Takeshy",
     description: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     images: [
-      {
-        url: "/img/wanderly.png",
-        width: 1200,
-        height: 630,
-        alt: "wanderly",
-      },
       {
         url: "/logo1.png",
         width: 1200,
@@ -75,19 +69,19 @@ export const metadata: Metadata = {
   applicationName: "Ahmed Takeshy",
   generator: "Ahmed Takeshy",
   referrer: 'origin-when-cross-origin',
-  authors: { name: "Ahmed Takeshy", url: "https://takeshy.works" },
+  authors: { name: "Ahmed Takeshy", url: "https://takeshy.tech" },
   creator: "Ahmed Takeshy",
   publisher: "Ahmed Takeshy",
-  metadataBase: new URL('https://takeshy.works'),
+  metadataBase: new URL('https://takeshy.tech'),
   alternates: {
     canonical: '/',
   },
   twitter: {
-    site: "https://takeshy.works",
+    site: "https://takeshy.tech",
     card: "summary_large_image",
-    siteId: "https://takeshy.works",
+    siteId: "https://takeshy.tech",
     creatorId: "Ahmed Takeshy",
-    creator: "https://takeshy.works",
+    creator: "https://takeshy.tech",
     title: "Takeshy",
     description: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     images: "/images/naviro.png",
@@ -108,12 +102,12 @@ export const metadata: Metadata = {
     abstract: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     ogType: "website",
     ogLocale: "en_US",
-    ogUrl: "https://takeshy.works",
+    ogUrl: "https://takeshy.tech",
     ogTitle: "Takeshy",
     ogDescription: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
   },
   appLinks: {
-    web: { url: "https://takeshy.works" },
+    web: { url: "https://takeshy.tech" },
   },
 };
 
