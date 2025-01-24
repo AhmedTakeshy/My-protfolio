@@ -1,8 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
-const config = {
-  darkMode: "class",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+export default {
+  darkMode: ["class"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     container: {
       padding: {
@@ -39,7 +43,5 @@ const config = {
       },
     },
   },
-  plugins: [],
-} satisfies Config
-
-export default config
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;

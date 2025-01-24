@@ -3,11 +3,11 @@ import Mailjet from "node-mailjet";
 import { ContactSchema, contactSchema } from "../lib/formSchemas"
 
 export async function contactFormAction(data: ContactSchema): Promise<ServerResponse<null>> {
+    const mailjet = Mailjet.apiConnect(
+        `${process.env.MAILJET_API_KEY}`,
+        `${process.env.MAILJET_SECRET_KEY}`,
+    )
     try {
-        const mailjet = Mailjet.apiConnect(
-            `${process.env.MAILJET_API_KEY}`,
-            `${process.env.MAILJET_SECRET_KEY}`,
-        )
         const result = await contactSchema.safeParseAsync(data);
         if (!result.success) {
             return {
@@ -23,7 +23,7 @@ export async function contactFormAction(data: ContactSchema): Promise<ServerResp
                 Messages: [
                     {
                         From: {
-                            Email: `ahmedtakeshy@takeshy.tech`,
+                            Email: `ahmedtakeshy7@gmail.com`,
                             Name: "Ahmed Takeshy"
                         },
                         To: [
@@ -39,7 +39,7 @@ export async function contactFormAction(data: ContactSchema): Promise<ServerResp
                     },
                     {
                         From: {
-                            Email: `ahmedtakeshy@takeshy.tech`,
+                            Email: `ahmedtakeshy7@gmail.com`,
                             Name: "Portfolio Website"
                         },
                         To: [
@@ -64,7 +64,7 @@ export async function contactFormAction(data: ContactSchema): Promise<ServerResp
             return {
                 statusCode: 502,
                 status: "Error",
-                errorMessage: "Internal Server Error with sending the confirmation email",
+                errorMessage: "An error occurred while sending your message",
             }
         }
         return {
@@ -74,10 +74,11 @@ export async function contactFormAction(data: ContactSchema): Promise<ServerResp
             data: null,
         }
     } catch (error) {
+        console.log("🚀 ~ contactFormAction ~ error:", error)
         return {
             statusCode: 500,
             status: "Error",
-            errorMessage: "Internal Server Error",
+            errorMessage: "Internal Server Error with sending the confirmation email",
         }
     }
 }

@@ -1,7 +1,5 @@
 "use client"
 import { useState } from "react";
-import { ToastContainer, toast, ToastOptions } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { fadeIn } from "../lib/variants";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp, BsMessenger } from "react-icons/bs";
@@ -13,18 +11,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormMessage, FormItem } from "@/components/ui/form"
 import { ImSpinner9 } from 'react-icons/im'
+import { toast } from "sonner";
 
 
-const toastConfig: ToastOptions = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: "dark",
-};
 
 export default function Contact() {
   const [isPending, setIsPending] = useState(false);
@@ -50,14 +39,17 @@ export default function Contact() {
       }
 
       const res = await contactFormAction(result.data)
-      if (res.statusCode === 200) {
+      console.log("🚀 ~ submitContact ~ res:", res)
+      if (res.status === "Success") {
         form.reset()
-        toast.success("Contact form submitted successfully", toastConfig)
+        toast.success("Successful", { description: res.successMessage, })
       }
     } catch (error) {
-      toast.error("Error", toastConfig)
+      console.log("🚀 ~ submitContact ~ error:", error)
+      toast.error("Error", { description: "Internal Server Error with sending the confirmation email", })
+    } finally {
+      setIsPending(false)
     }
-    setIsPending(false)
   }
 
   return (
@@ -159,7 +151,10 @@ export default function Contact() {
                 )}
               />
               <button type="submit" className="btn btn-lg">
-                {isPending ? <ImSpinner9 className={`ease-in-out animate-spin `} /> : "Send message"}
+                {isPending ? (<span className="flex items-center gap-x-2">
+                  <ImSpinner9 className={`ease-in-out animate-spin`} />
+                  Submitting...
+                </span>) : "Send message"}
               </button>
               <div className="flex items-center gap-x-6">
                 <Link
@@ -203,7 +198,6 @@ export default function Contact() {
           </Form>
         </div>
       </div>
-      <ToastContainer />
     </section>
   );
 };
