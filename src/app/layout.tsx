@@ -93,6 +93,7 @@ export const metadata: Metadata = {
   category: "web development and design, web development, web design, web developer, web designer, web development company, web design company, web development agency, web design agency, web development services, web design services, web development firm, web design firm, web development studio, web design studio, web development company near me, web design company near me, web development agency near me, web design agency near me, web development services near me, web design services near me, web development firm near me, web design firm near me, web development studio near me, web design studio near me, web development company in turkey, web design company in turkey, web development agency in turkey, web design agency in turkey, web development services in turkey, web design services in turkey, web development firm in turkey, web design firm in turkey, web development studio in turkey, web design studio in turkey",
   other: {
     copyRight: "© 2023 Ahmed Takeshy. All rights reserved.",
+    "google-site-verification":"ZB0K9bkPQd5lC9UQMPuGeRTAt6Z1o8HEIkdRkoLAwn0",
     rating: "general",
     Distribution: "global",
     Revisit: "1 day",
