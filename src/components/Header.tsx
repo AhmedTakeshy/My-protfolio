@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import { Link } from "react-scroll";
-import bannerBg from "@/public/img/banner-bg.webp";
 export default function Header() {
   return (
     <nav className="flex items-center justify-between mb-24">

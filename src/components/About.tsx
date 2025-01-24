@@ -1,8 +1,8 @@
 "use client"
 import { useInView } from "react-intersection-observer";
-import { fadeIn } from "../lib/variants";
+import { fadeIn } from "@/lib/variants";
 import CountUp from "react-countup";
-import { MotionDiv } from "../lib/motionsDev";
+import { MotionDiv } from "@/lib/motionsDev";
 import aboutImg from "@/../public/img/about.webp";
 import Image from "next/image";
 

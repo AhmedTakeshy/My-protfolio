@@ -1,10 +1,10 @@
-import Nav from '../components/Nav';
-import Banner from "../components/Banner";
-import Skills from "../components/skills/Skills";
-import Work from "../components/work/Work";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Nav from '@/components/Nav';
+import Banner from "@/components/Banner";
+import Skills from "@/components/skills/Skills";
+import Work from "@/components/work/Work";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Image from 'next/image';
 import siteImg from "@/../public/site-bg.webp";
 export default async function page() {
