@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://takeshy.tech",
+    url: "https://takeshy.vercel.app",
     title: "Takeshy",
     description: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     images: [
@@ -69,19 +69,19 @@ export const metadata: Metadata = {
   applicationName: "Ahmed Takeshy",
   generator: "Ahmed Takeshy",
   referrer: 'origin-when-cross-origin',
-  authors: { name: "Ahmed Takeshy", url: "https://takeshy.tech" },
+  authors: { name: "Ahmed Takeshy", url: "https://takeshy.vercel.app" },
   creator: "Ahmed Takeshy",
   publisher: "Ahmed Takeshy",
-  metadataBase: new URL('https://takeshy.tech'),
+  metadataBase: new URL('https://takeshy.vercel.app'),
   alternates: {
     canonical: '/',
   },
   twitter: {
-    site: "https://takeshy.tech",
+    site: "https://takeshy.vercel.app",
     card: "summary_large_image",
-    siteId: "https://takeshy.tech",
+    siteId: "https://takeshy.vercel.app",
     creatorId: "Ahmed Takeshy",
-    creator: "https://takeshy.tech",
+    creator: "https://takeshy.vercel.app",
     title: "Takeshy",
     description: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     images: "/images/naviro.png",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   category: "web development and design, web development, web design, web developer, web designer, web development company, web design company, web development agency, web design agency, web development services, web design services, web development firm, web design firm, web development studio, web design studio, web development company near me, web design company near me, web development agency near me, web design agency near me, web development services near me, web design services near me, web development firm near me, web design firm near me, web development studio near me, web design studio near me, web development company in turkey, web design company in turkey, web development agency in turkey, web design agency in turkey, web development services in turkey, web design services in turkey, web development firm in turkey, web design firm in turkey, web development studio in turkey, web design studio in turkey",
   other: {
     copyRight: "© 2023 Ahmed Takeshy. All rights reserved.",
-    "google-site-verification":"ZB0K9bkPQd5lC9UQMPuGeRTAt6Z1o8HEIkdRkoLAwn0",
+    "google-site-verification": "ZB0K9bkPQd5lC9UQMPuGeRTAt6Z1o8HEIkdRkoLAwn0",
     rating: "general",
     Distribution: "global",
     Revisit: "1 day",
@@ -103,12 +103,12 @@ export const metadata: Metadata = {
     abstract: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
     ogType: "website",
     ogLocale: "en_US",
-    ogUrl: "https://takeshy.tech",
+    ogUrl: "https://takeshy.vercel.app",
     ogTitle: "Takeshy",
     ogDescription: "Frontend developer based in Turkey. I create responsive websites that are displayed on all devices desktops and smartphones. I am familiar with HTML5, CSS3, JavaScript, React, NextJS, and more.",
   },
   appLinks: {
-    web: { url: "https://takeshy.tech" },
+    web: { url: "https://takeshy.vercel.app" },
   },
 };
 

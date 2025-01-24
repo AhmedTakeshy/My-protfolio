@@ -3,31 +3,31 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://takeshy.tech/',
+      url: 'https://takeshy.vercel.app/',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://takeshy.tech/#skills',
+      url: 'https://takeshy.vercel.app/#skills',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://takeshy.tech/#work',
+      url: 'https://takeshy.vercel.app/#work',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: 'https://takeshy.tech/#about',
+      url: 'https://takeshy.vercel.app/#about',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://takeshy.tech/#contact',
+      url: 'https://takeshy.vercel.app/#contact',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,

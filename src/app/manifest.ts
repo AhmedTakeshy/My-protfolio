@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: "Ahmed Takeshy Frontend Developer Portfolio",
         short_name: "Ahmed Takeshy Portfolio",
-        description: "Frontend developer based in Turkey. I build websites and web applications using modern technologies, tools, and frameworks.",
+        description: "Frontend developer based in Turkey. I build websites and web applications using modern technologies, tools, and frameworks. Such as NextJS, Tailwind CSS, Typescript, Shadcn UI, and more.",
         start_url: '/',
         display: 'standalone',
         background_color: '#fff',

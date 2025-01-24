@@ -18,6 +18,7 @@ export default async function page() {
         fill
         className='object-cover z-[-2]'
         placeholder='blur'
+        blurDataURL={siteImg.blurDataURL}
         priority={true}
         sizes='100vw'
       />

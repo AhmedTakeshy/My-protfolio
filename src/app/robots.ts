@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://takeshy.tech/sitemap.xml',
-    host: 'https://takeshy.tech',
+    sitemap: 'https://takeshy.vercel.app/sitemap.xml',
+    host: 'https://takeshy.vercel.app',
   }
 }
