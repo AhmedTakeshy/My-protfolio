@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import Cookies from "@/components/cookies";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"], display: "swap", variable: "--font-orbitron" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap", variable: "--font-rajdhani" });
@@ -122,7 +122,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GTM_ID}`} />
+      <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GA_ID}`} />
       <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
         {children}
         <SpeedInsights />
