@@ -5,12 +5,11 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import Cookies from "@/components/cookies";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"], display: "swap", variable: "--font-orbitron" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap", variable: "--font-rajdhani" });
 const aldrich = Aldrich({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-aldrich" });
-
+import { getCookie } from "cookies-next/server";
+import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   title: "Ahmed Takeshy | Frontend Developer",
@@ -118,17 +117,17 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
-
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const cookie = await getCookie('cookie-consent-state', { cookies })
+  console.log("🚀 ~ RootLayout ~ cookie:", cookie)
   return (
     <html lang="en">
-      <GoogleAnalytics gaId={`${process.env.GA_ID}`} />
       <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
         {children}
         <SpeedInsights />
         <Analytics />
         <Toaster richColors />
-        <Cookies />
+        <Cookies cookie={cookie as string} />
       </body>
     </html>
   )
