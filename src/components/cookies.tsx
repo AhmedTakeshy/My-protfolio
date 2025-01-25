@@ -1,5 +1,5 @@
 "use client"
-import { sendGTMEvent } from '@next/third-parties/google'
+// import { sendGTMEvent } from '@next/third-parties/google'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import { useGetCookie, useSetCookie } from 'cookies-next/client';
