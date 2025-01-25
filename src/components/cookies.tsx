@@ -36,6 +36,8 @@ export default function Cookies({ cookie }: CookiesProps) {
                         className="cursor-pointer underline hover:text-blue-500"
                         target='_blank'
                         rel={"noopener noreferrer"}
+                        aria-label="More info"
+                        aria-description='More info about cookies'
                     >
                         More info
                     </Link>
