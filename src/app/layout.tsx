@@ -122,7 +122,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GA_ID}`} />
+      <GoogleAnalytics gaId={`${process.env.GA_ID}`} />
       <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
         {children}
         <SpeedInsights />
