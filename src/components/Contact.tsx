@@ -39,13 +39,11 @@ export default function Contact() {
       }
 
       const res = await contactFormAction(result.data)
-      console.log("🚀 ~ submitContact ~ res:", res)
       if (res.status === "Success") {
         form.reset()
         toast.success("Successful", { description: res.successMessage, })
       }
-    } catch (error) {
-      console.log("🚀 ~ submitContact ~ error:", error)
+    } catch {
       toast.error("Error", { description: "Internal Server Error with sending the confirmation email", })
     } finally {
       setIsPending(false)

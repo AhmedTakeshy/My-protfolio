@@ -119,7 +119,6 @@ type RootLayoutProps = {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const cookie = await getCookie('cookie-consent-state', { cookies })
-  console.log("🚀 ~ RootLayout ~ cookie:", cookie)
   return (
     <html lang="en">
       <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
