@@ -22,7 +22,6 @@ export default function Project({ src, preTitle, live, code, videoLink }: Projec
           className="group-hover:object-bottom z-10 absolute inset-0 transition-all duration-8000 ease-in-out w-full h-full object-cover object-top"
           width={565}
           height={316}
-          priority={true}
           placeholder="blur"
           blurDataURL={src.blurDataURL}
           loading="lazy"
