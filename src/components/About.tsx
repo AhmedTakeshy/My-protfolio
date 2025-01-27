@@ -30,7 +30,8 @@ export default function About() {
               alt="about image"
               className="object-cover object-top w-full h-full"
               placeholder="blur"
-              quality={100}
+              blurDataURL={aboutImg.blurDataURL}
+              loading="lazy"
             />
           </MotionDiv>
           <MotionDiv

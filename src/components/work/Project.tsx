@@ -24,7 +24,8 @@ export default function Project({ src, preTitle, live, code, videoLink }: Projec
           height={316}
           priority={true}
           placeholder="blur"
-          quality={100}
+          blurDataURL={src.blurDataURL}
+          loading="lazy"
         />
         {/* overlay */}
         {showLinks && (

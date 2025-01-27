@@ -19,7 +19,14 @@ export default function Banner() {
       className="relative flex items-center h-screen overflow-hidden"
       id="home"
     >
-      <Image src={bannerImg} className="z-[-1] object-cover" alt="Banner background" fill placeholder="blur" priority />
+      <Image
+        src={bannerImg}
+        className="z-[-1] object-cover"
+        alt="Banner background"
+        fill
+        placeholder="blur"
+        blurDataURL={bannerImg.blurDataURL}
+        loading="lazy" />
       <div className="container mx-auto">
         <Header />
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
@@ -115,7 +122,14 @@ export default function Banner() {
             whileInView={"show"}
             className="hidden lg:flex flex-1 max-w-[320px] lg:mx-w-[482]"
           >
-            <Image width={300} height={300} src={headerImg} priority alt="header img" className="w-auto h-auto img" />
+            <Image
+              width={300}
+              height={300}
+              src={headerImg}
+              blurDataURL={headerImg.blurDataURL}
+              loading="lazy"
+              alt="header img"
+              className="w-auto h-auto img" />
           </MotionDiv>
         </div>
       </div>
