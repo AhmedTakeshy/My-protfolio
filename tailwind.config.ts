@@ -34,13 +34,15 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-
       },
       backgroundImage: {
         site: "url('/site-bg.webp')",
         banner: "url('/img/banner-bg.webp')",
         about: "url('/img/about.webp')",
       },
+      transitionDuration: {
+        '8000': '8000ms',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

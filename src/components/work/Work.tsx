@@ -120,13 +120,12 @@ export default function Work() {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex flex-col flex-1 mb-10 gap-y-12 xl:mb-0"
+            className="flex flex-col flex-1 mb-10 gap-y-12 xl:mb-0 xl:pl-[3.25rem] text-left"
           >
             {/* text */}
-            <div>
-              <h2 className="leading-tight pointer-events-none h2 text-accent">
-                Some Of My Latest <br />
-                Work.
+            <div className="">
+              <h2 className="leading-tight pointer-events-none h2 text-accent max-w-lg">
+                Some Of My Latest Work.
               </h2>
               <p
                 className="max-w-sm mb-3 cursor-pointer xl:mb-12"

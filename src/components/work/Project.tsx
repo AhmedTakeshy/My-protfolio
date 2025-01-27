@@ -12,14 +12,14 @@ export default function Project({ src, preTitle, live, code, videoLink }: Projec
     <>
       {/* image */}
       <div
-        className="relative overflow-hidden w-[320px] sm:w-[450px] md:w-[660px] xl:w-[561px] h-[350px] xl:h-[316px] border-2 border-white group rounded-xl hover:cursor-pointer"
+        className="relative overflow-hidden w-[320px] sm:w-[450px] shadow-md shadow-black md:w-[660px] xl:w-[561px] h-[350px] xl:h-[316px] border-2 border-white group rounded-xl hover:cursor-pointer"
         onClick={() => setShowLinks((prev) => !prev)}
         onMouseLeave={() => setShowLinks(false)}
       >
         <Image
           src={src}
           alt={`${preTitle}-project`}
-          className="group-hover:object-bottom z-10 absolute inset-0 transition-all duration-[8s] ease-in-out w-full h-full object-cover object-top"
+          className="group-hover:object-bottom z-10 absolute inset-0 transition-all duration-8000 ease-in-out w-full h-full object-cover object-top"
           width={565}
           height={316}
           priority={true}
