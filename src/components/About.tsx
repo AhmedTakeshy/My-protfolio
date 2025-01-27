@@ -43,7 +43,7 @@ export default function About() {
             <h2 className="h2 text-accent">About me.</h2>
             <h3 className="mb-4 h3 ">I&apos;m Ahmed, and</h3>
             <p className="mb-6">
-              I am a self-taught Frontend developer with more than 3 years of experience
+              I am a self-taught Frontend developer with more than 4 years of experience
               more focused on UX and user interactions using the
               latest modern technology such as <b>Next.js</b>, <b>Typescript</b>,
               and <b>React</b> and highly motivated web developer with a focus
@@ -55,7 +55,7 @@ export default function About() {
             <div className="flex mb-12 gap-x-6 lg:gap-x-10">
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={3} duration={6} /> : null}+
+                  {inView ? <CountUp start={0} end={4} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Years of <br /> Experience
@@ -63,7 +63,7 @@ export default function About() {
               </div>
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={30} duration={6} /> : null}+
+                  {inView ? <CountUp start={0} end={40} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Projects <br /> Completed
@@ -71,7 +71,7 @@ export default function About() {
               </div>
               <div>
                 <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={15} duration={6} /> : null}+
+                  {inView ? <CountUp start={0} end={25} duration={6} /> : null}+
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   Satisfied <br /> Clients

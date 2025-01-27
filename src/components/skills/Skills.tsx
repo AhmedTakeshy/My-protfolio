@@ -15,18 +15,6 @@ const skills = [
     src: "/img/meter1.svg",
   },
   {
-    alt: "react-router meter image",
-    name: "React-router",
-    title: "React-router skill meter",
-    src: "/img/meter2.svg",
-  },
-  {
-    alt: "redux meter image",
-    name: "Redux",
-    title: "Redux skill meter",
-    src: "/img/meter3.svg",
-  },
-  {
     alt: "redux-toolkit meter image",
     name: "Redux-toolkit",
     title: "Redux-toolkit skill meter",
@@ -40,7 +28,7 @@ const skills = [
   },
   {
     alt: "tailwind meter image",
-    name: "Tailwind",
+    name: "Tailwind CSS",
     title: "Tailwind skill meter",
     src: "/img/meter2.svg",
   },
@@ -51,20 +39,8 @@ const skills = [
     src: "/img/meter3.svg",
   },
   {
-    alt: "jquery meter image",
-    name: "jQuery",
-    title: "jQuery skill meter",
-    src: "/img/meter2.svg",
-  },
-  {
-    alt: "sass meter image",
-    name: "Sass",
-    title: "Sass skill meter",
-    src: "/img/meter1.svg",
-  },
-  {
     alt: "prisma meter image",
-    name: "Prisma",
+    name: "Prisma ORM",
     title: "Prisma skill meter",
     src: "/img/meter3.svg",
   },
@@ -91,6 +67,12 @@ const skills = [
     name: "Typescript",
     title: "Typescript skill meter",
     src: "/img/meter2.svg",
+  },
+  {
+    alt: "TDD meter image",
+    name: "TDD",
+    title: "TDD skill meter",
+    src: "/img/meter1.svg",
   },
 ]
 
