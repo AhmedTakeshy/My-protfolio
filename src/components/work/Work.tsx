@@ -13,6 +13,8 @@ import learnuImg from "@/../public/img/learnu.webp";
 import spcImg from "@/../public/img/spc.png";
 import galaxyImg from "@/../public/img/galaxy.png";
 import powerImg from "@/../public/img/power.png";
+import shifarefImg from "@/../public/img/shifaref.png";
+
 const Project = dynamic(() => import("./Project"))
 
 const projects: Projects[] = [
@@ -29,6 +31,12 @@ const projects: Projects[] = [
     preTitle: "Power Gym",
     live: "https://power--gym.vercel.app/",
     videoLink: "https://youtu.be/3C2S-mVIwhk",
+  },
+  {
+    src: shifarefImg,
+    alt: "shifaref img",
+    preTitle: "Shifaref",
+    live: "https://shifaref.com",
   },
   {
     src: wanderlyImg,
