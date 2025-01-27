@@ -7,8 +7,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Image from 'next/image';
 import siteImg from "@/../public/site-bg.webp";
-export default async function page() {
 
+
+export default async function page() {
 
   return (
     <div className="relative">
@@ -19,16 +20,15 @@ export default async function page() {
         className='object-cover z-[-2]'
         placeholder='blur'
         blurDataURL={siteImg.blurDataURL}
-        priority={true}
-        sizes='100vw'
+        loading='lazy'
       />
       <Banner />
       <Skills />
       <Work />
       <About />
       <Contact />
-      <Footer />
       <Nav />
+      <Footer />
     </div>
   );
 }

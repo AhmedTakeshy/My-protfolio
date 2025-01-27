@@ -5,11 +5,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import Cookies from "@/components/cookies";
+import { cookies } from 'next/headers';
+import { getCookie } from "cookies-next/server";
+
+const aldrich = Aldrich({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-aldrich" });
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"], display: "swap", variable: "--font-orbitron" });
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], display: "swap", variable: "--font-rajdhani" });
-const aldrich = Aldrich({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-aldrich" });
-import { getCookie } from "cookies-next/server";
-import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   title: "Ahmed Takeshy | Frontend Developer",
