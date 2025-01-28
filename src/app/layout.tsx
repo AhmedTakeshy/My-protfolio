@@ -7,7 +7,6 @@ import { Toaster } from "@/components/ui/sonner";
 import Cookies from "@/components/cookies";
 import { cookies } from 'next/headers';
 import { getCookie } from "cookies-next/server";
-import { PostHogProvider } from "@/context/postHog";
 
 const aldrich = Aldrich({ subsets: ["latin"], weight: "400", display: "swap", variable: "--font-aldrich" });
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "900"], display: "swap", variable: "--font-orbitron" });
@@ -122,16 +121,14 @@ type RootLayoutProps = {
 export default async function RootLayout({ children }: RootLayoutProps) {
   const cookie = await getCookie('cookie-consent-state', { cookies })
   return (
-    <html lang="en">
-      <PostHogProvider>
-        <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
-          {children}
-          <SpeedInsights />
-          <Analytics />
-          <Toaster richColors />
-          <Cookies cookie={cookie as string} />
-        </body>
-      </PostHogProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${orbitron.variable} ${rajdhani.variable} ${aldrich.variable}`}>
+        {children}
+        <SpeedInsights />
+        <Analytics />
+        <Toaster richColors />
+        <Cookies cookie={cookie as string} />
+      </body>
     </html>
   )
 }
