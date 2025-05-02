@@ -13,7 +13,6 @@ import headerImg from "@/../public/img/header.svg";
 
 export default function Banner() {
 
-
   return (
     <section
       className="relative flex items-center h-screen overflow-hidden"
