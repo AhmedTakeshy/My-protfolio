@@ -14,6 +14,7 @@ import spcImg from "@/../public/img/spc.png";
 import galaxyImg from "@/../public/img/galaxy.png";
 import powerImg from "@/../public/img/power.png";
 import shifarefImg from "@/../public/img/shifaref.png";
+import doreyazilim from "@/../public/img/doreyazilim.png";
 
 const Project = dynamic(() => import("./Project"))
 
@@ -26,17 +27,23 @@ const projects: Projects[] = [
     code: "https://github.com/AhmedTakeshy/HoReCa",
   },
   {
+    src: shifarefImg,
+    alt: "shifaref img",
+    preTitle: "Shifaref",
+    live: "https://shifaref.com",
+  },
+  {
+    src: doreyazilim,
+    alt: "dore-yazilim img",
+    preTitle: "Dore Yazilim",
+    live: "https://doreyazilim.com",
+  },
+  {
     src: powerImg,
     alt: "power img",
     preTitle: "Power Gym",
     live: "https://power--gym.vercel.app/",
     videoLink: "https://youtu.be/3C2S-mVIwhk",
-  },
-  {
-    src: shifarefImg,
-    alt: "shifaref img",
-    preTitle: "Shifaref",
-    live: "https://shifaref.com",
   },
   {
     src: wanderlyImg,
