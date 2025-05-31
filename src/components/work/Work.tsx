@@ -7,24 +7,24 @@ import { MotionDiv } from "@/lib/motionsDev";
 import fajerImg from "@/../public/img/fajer.webp";
 import wanderlyImg from "@/../public/img/wanderly.webp";
 import foodyImg from "@/../public/img/foody.webp";
-import horecaImg from "@/../public/img/horeca.png";
+import horecaImg from "@/../public/img/horeca.webp";
 import yelpImg from "@/../public/img/yelp.webp";
 import learnuImg from "@/../public/img/learnu.webp";
-import spcImg from "@/../public/img/spc.png";
-import galaxyImg from "@/../public/img/galaxy.png";
-import powerImg from "@/../public/img/power.png";
-import shifarefImg from "@/../public/img/shifaref.png";
-import doreyazilim from "@/../public/img/doreyazilim.png";
+import spcImg from "@/../public/img/spc.webp";
+import galaxyImg from "@/../public/img/galaxy.webp";
+import powerImg from "@/../public/img/power.webp";
+import shifarefImg from "@/../public/img/shifaref.webp";
+import doreyazilim from "@/../public/img/doreyazilim.webp";
+import gmallBg from '@/../public/img/gmall.webp'
 
 const Project = dynamic(() => import("./Project"))
 
 const projects: Projects[] = [
   {
-    src: horecaImg,
-    alt: "horeca img",
-    preTitle: "Horeca e-commerce",
-    live: "https://horeca-ecommerce.vercel.app",
-    code: "https://github.com/AhmedTakeshy/HoReCa",
+    src:gmallBg,
+    alt: "gmall img",
+    preTitle: "G-Mall Management",
+    live: "https://gmallmanagement.vercel.app/",
   },
   {
     src: shifarefImg,
@@ -44,6 +44,13 @@ const projects: Projects[] = [
     preTitle: "Power Gym",
     live: "https://power--gym.vercel.app/",
     videoLink: "https://youtu.be/3C2S-mVIwhk",
+  },
+  {
+    src: horecaImg,
+    alt: "horeca img",
+    preTitle: "Horeca e-commerce",
+    live: "https://horeca-ecommerce.vercel.app",
+    code: "https://github.com/AhmedTakeshy/HoReCa",
   },
   {
     src: wanderlyImg,
