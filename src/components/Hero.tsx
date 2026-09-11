@@ -9,7 +9,7 @@ import ArchitectureDiagram from "./hero/ArchitectureDiagram";
 export default function Hero() {
   return (
     <section
-      className="relative flex items-center min-h-screen py-32 overflow-hidden blueprint-grid"
+      className="relative flex items-center min-h-screen py-32 overflow-hidden"
       id="home"
     >
       <div className="container mx-auto">
