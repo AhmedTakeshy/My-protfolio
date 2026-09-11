@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
         description: "Frontend developer based in Turkey. I build websites and web applications using modern technologies, tools, and frameworks. Such as NextJS, Tailwind CSS, Typescript, Shadcn UI, and more.",
         start_url: '/',
         display: 'standalone',
-        background_color: '#fff',
-        theme_color: '#fff',
+        background_color: '#0B0E13',
+        theme_color: '#0B0E13',
         icons: [
             {
                 src: '/icons/android-chrome-192x192.png',
@@ -39,11 +39,6 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: '/icons/A.png',
                 sizes: '150x150',
                 type: 'maskable',
-            },
-            {
-                src: '/favicon.ico',
-                sizes: '48x48',
-                type: 'image/x-icon',
             },
         ],
     }
