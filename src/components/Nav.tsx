@@ -1,107 +1,46 @@
 "use client"
-import { BiHomeAlt, BiUser, BiCode } from "react-icons/bi";
-import { BsBriefcase, BsChatSquare } from "react-icons/bs";
 import { Link } from "react-scroll";
+
+const LINKS = [
+  { to: "home", index: "00", label: "Home" },
+  { to: "work", index: "01", label: "Work" },
+  { to: "skills", index: "02", label: "Capabilities" },
+  { to: "about", index: "03", label: "About" },
+  { to: "contact", index: "04", label: "Contact" },
+];
+
 export default function Nav() {
   return (
-    <nav className="fixed z-50 w-full px-4 overflow-hidden bottom-3 lg:bottom-8">
-      <div className="mx-auto">
-        <div
-          className="w-full bg-black/25 backdrop-blur-[10px] rounded-full max-w-[460px] 
-        mx-auto px-5 py-3 flex justify-between items-center text-2xl text-white/50"
+    <nav className="fixed top-0 z-50 w-full border-b border-border bg-bg/80 backdrop-blur-md">
+      <div className="container flex items-center justify-between mx-auto h-16">
+        <Link
+          to="home"
+          smooth={true}
+          className="font-mono text-sm cursor-pointer text-ink hover:text-accent transition-colors"
+          aria-label="Back to top"
+          title="Back to top"
         >
-          <Link
-            to="home"
-            activeClass="active"
-            smooth={true}
-            offset={-200}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="Home icon"
-            role="link"
-            aria-details="link to home section"
-            title="link to home section"
-            label="home icon"
-          >
-            <BiHomeAlt
-              aria-label="icon"
-              aria-details="home icon"
-              role="img"
-            />
-          </Link>
-          <Link
-            to="skills"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="Skills icons"
-            role="link"
-            aria-details="link to skills section"
-            title="link to skills section"
-            label="skills icon"
-          >
-            <BiCode
-              aria-label="icon"
-              aria-details="code icon"
-              role="img"
-            />
-          </Link>
-          <Link
-            to="work"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="Work icon"
-            role="link"
-            aria-details="link to work section"
-            title="link to work section"
-            label="work icon"
-          >
-            <BsBriefcase
-              aria-label="icon"
-              aria-details="briefcase icon"
-              role="img"
-            />
-          </Link>
-          <Link
-            to="about"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="about"
-            role="link"
-            aria-details="link to about section"
-            title="link to about section"
-            label="about icon"
-          >
-            <BiUser
-              aria-label="icon"
-              aria-details="user icon"
-              role="img"
-            />
-          </Link>
-          <Link
-            to="contact"
-            activeClass="active"
-            smooth={true}
-            spy={true}
-            className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center"
-            aria-label="contact"
-            role="link"
-            aria-details="link to contact section"
-            title="link to contact section"
-            label="contact icon"
-          >
-            <BsChatSquare
-              aria-label="icon"
-              aria-details="chat icon"
-              role="img"
-            />
-          </Link>
-        </div>
+          AA.dev
+        </Link>
+        <ul className="flex items-center gap-x-1 sm:gap-x-2">
+          {LINKS.map((link) => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                activeClass="active"
+                smooth={true}
+                spy={true}
+                offset={-64}
+                className="flex items-center px-2 sm:px-3 py-2 font-mono text-xs sm:text-sm cursor-pointer text-muted hover:text-ink transition-colors gap-x-2"
+                aria-label={`Go to ${link.label}`}
+                title={`Go to ${link.label}`}
+              >
+                <span className="text-accent">{link.index}</span>
+                <span className="hidden sm:inline">{link.label}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
