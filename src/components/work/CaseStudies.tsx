@@ -3,6 +3,7 @@ import { useState } from "react";
 import { caseStudies } from "./caseStudies.data";
 import CaseStudyCard from "./CaseStudyCard";
 import CaseStudyModal from "./CaseStudyModal";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function CaseStudies() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -17,12 +18,13 @@ export default function CaseStudies() {
         </h2>
         <div className="grid gap-6 sm:grid-cols-2">
           {caseStudies.map((study, i) => (
-            <CaseStudyCard
-              key={study.slug}
-              study={study}
-              featured={i === 0}
-              onOpen={() => setOpenSlug(study.slug)}
-            />
+            <ScrollReveal key={study.slug} delayMs={i * 100} className={i === 0 ? "sm:col-span-2" : ""}>
+              <CaseStudyCard
+                study={study}
+                featured={i === 0}
+                onOpen={() => setOpenSlug(study.slug)}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </div>

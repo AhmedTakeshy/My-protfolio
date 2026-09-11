@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 const GROUPS: { label: string; items: string[] }[] = [
   {
     label: "Frontend",
@@ -26,8 +28,8 @@ export default function Capabilities() {
           A spec sheet, not a highlight reel.
         </h2>
         <div className="grid gap-px overflow-hidden border rounded-lg sm:grid-cols-2 border-border bg-border">
-          {GROUPS.map((group) => (
-            <div key={group.label} className="p-6 lg:p-8 bg-surface">
+          {GROUPS.map((group, i) => (
+            <ScrollReveal key={group.label} delayMs={i * 80} className="p-6 lg:p-8 bg-surface">
               <h3 className="mb-4 font-mono text-xs tracking-widest uppercase text-accent">
                 {group.label}
               </h3>
@@ -41,7 +43,7 @@ export default function Capabilities() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
