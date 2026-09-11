@@ -2,40 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-.img {
-  animation: up-down 3s linear infinite;
-  -webkit-animation: up-down 3s linear infinite;
+/* Blueprint grid — the site's ambient texture across the whole page, fixed so
+   it reads as a substrate rather than scrolling artwork. Applied once via a
+   fixed full-viewport layer (see page.tsx), not per-section. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(35, 42, 54, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 42, 54, 0.6) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
-@keyframes up-down {
-  0% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
+
+/* Every 4th line slightly stronger, like a real graph-paper major grid. */
+.blueprint-grid-major {
+  background-image:
+    linear-gradient(to right, rgba(35, 42, 54, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 42, 54, 0.6) 1px, transparent 1px),
+    linear-gradient(to right, rgba(124, 133, 146, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 133, 146, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 192px 192px, 192px 192px;
 }
 
 .btn {
-  background: linear-gradient(54.7deg, #960ead 12%, #0ad8c7 100%);
-  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+  background: theme('colors.accent');
+  color: theme('colors.bg');
 }
 
 .btn:hover {
-  background: linear-gradient(54.7deg, #0ad8c7 12%, #960ead);
-}
-
-.gradient,
-.active {
-  background: linear-gradient(54.7deg, #0ad8c7 12%, #960ead);
+  background: theme('colors.ink');
 }
 
 .active {
-  color: #fff;
-  padding: 0.8rem;
-  border-radius: 100%;
+  color: theme('colors.accent');
 }
 
 @layer base {
@@ -49,35 +46,47 @@
     --destructive-foreground: 210 40% 98%;
   }
   body {
-    @apply text-lg leading-8 text-white font-secondary;
+    @apply text-base leading-7 text-ink font-sans bg-bg;
   }
   .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+    @apply font-mono text-[13px] tracking-[0.2em] uppercase text-muted mb-4;
   }
   .h3 {
-    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+    @apply font-sans font-semibold text-[28px] mb-6 leading-[1.2] text-ink;
   }
   .btn {
-    @apply font-medium text-white rounded-full font-primary;
+    @apply font-medium rounded-full font-sans transition-colors duration-200;
   }
   .btn-sm {
-    @apply h-[48px] px-6 text-sm;
+    @apply h-[44px] px-6 text-sm;
   }
   .btn-lg {
-    @apply h-[56px] px-10 text-base;
+    @apply h-[52px] px-8 text-base;
   }
   .btn-link {
-    @apply text-base;
+    @apply text-base text-accent hover:text-ink transition-colors duration-200;
   }
-  .text-gradient {
-    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-accent;
   }
   .section {
-    @apply flex items-center py-8 lg:py-24 lg:h-screen;
+    @apply flex items-center py-16 lg:py-24 lg:min-h-screen;
   }
 }
 
 /* To hide scrollbar from the screen */
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Respect reduced-motion preferences globally, not just on the hero. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

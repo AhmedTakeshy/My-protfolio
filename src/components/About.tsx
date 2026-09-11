@@ -1,85 +1,37 @@
-"use client"
-import { useInView } from "react-intersection-observer";
-import { fadeIn } from "@/lib/variants";
-import CountUp from "react-countup";
-import { MotionDiv } from "@/lib/motionsDev";
-import aboutImg from "@/../public/img/about.webp";
-import Image from "next/image";
-
-
 export default function About() {
-  const [ref, inView] = useInView({
-    threshold: 0.5,
-  });
   return (
-    <section ref={ref} className="section" id="about">
+    <section className="section" id="about">
       <div className="container mx-auto">
-        <div
-          className="flex flex-col h-screen gap-y-10 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0"
-        >
-          <MotionDiv
-            variants={fadeIn("left", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 hidden lg:inline-block" >
-            <Image
-              src={aboutImg}
-              width={545}
-              height={640}
-              alt="about image"
-              className="object-cover object-top w-full h-full"
-              placeholder="blur"
-              blurDataURL={aboutImg.blurDataURL}
-              loading="lazy"
-            />
-          </MotionDiv>
-          <MotionDiv
-            variants={fadeIn("right", 0.5)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 pointer-events-none"
-          >
-            <h2 className="h2 text-accent">About me.</h2>
-            <h3 className="mb-4 h3 ">I&apos;m Ahmed, and</h3>
-            <p className="mb-6">
-              I am a self-taught Frontend developer with more than 4 years of experience
-              more focused on UX and user interactions using the
-              latest modern technology such as <b>Next.js</b>, <b>Typescript</b>,
-              and <b>React</b> and highly motivated web developer with a focus
-              on front-end development. I have the ability to work
-              both independently and as part of a team. I am highly organized,
-              and detail-oriented. I am passionate about web apps development
-              and learning new technology or tools making me so excited.
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+          <div>
+            <p className="eyebrow mb-3">03 — About</p>
+            <h2 className="text-[32px] lg:text-[40px] font-semibold text-ink leading-[1.1]">
+              Self-taught. <br />Systems-minded.
+            </h2>
+          </div>
+          <div>
+            <p className="mb-6 text-lg text-ink/90">
+              I&apos;m a self-taught frontend engineer with 6+ years building
+              production React and Next.js applications. I care most about
+              the parts of a product other engineers avoid: the architecture
+              underneath the UI — how a codebase splits into modules, how a
+              design system stays consistent across teams, how a CI pipeline
+              stays fast as a team grows.
             </p>
-            <div className="flex mb-12 gap-x-6 lg:gap-x-10">
-              <div>
-                <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={4} duration={6} /> : null}+
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Years of <br /> Experience
-                </div>
-              </div>
-              <div>
-                <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={40} duration={6} /> : null}+
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Projects <br /> Completed
-                </div>
-              </div>
-              <div>
-                <div className=" text-[40px] font-primary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={25} duration={6} /> : null}+
-                </div>
-                <div className="font-primary text-sm tracking-[2px]">
-                  Satisfied <br /> Clients
-                </div>
-              </div>
+            <p className="mb-10 text-lg text-ink/90">
+              I work well both independently and inside a team, and I&apos;m
+              detail-oriented to a fault — I&apos;d rather ship one thing
+              done properly than five things half-finished. My background is
+              a Business Administration degree and two web development
+              bootcamps, not a CS program — what I bring instead is 6+ years
+              of production ownership and the artifacts to show for it.
+            </p>
+            <div className="flex flex-wrap gap-x-10 gap-y-4 font-mono text-sm text-muted">
+              <span><span className="text-ink">6+</span> years in production</span>
+              <span><span className="text-ink">6</span> modules architected</span>
+              <span><span className="text-ink">90%</span> CI/CD time cut</span>
             </div>
-          </MotionDiv>
+          </div>
         </div>
       </div>
     </section>

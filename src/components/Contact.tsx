@@ -1,10 +1,8 @@
 "use client"
 import { useState } from "react";
-import { fadeIn } from "../lib/variants";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsWhatsapp, BsMessenger } from "react-icons/bs";
 import Link from "next/link";
-import { MotionDiv, MotionForm } from "../lib/motionsDev";
 import { ContactSchema, contactSchema } from "@/lib/formSchemas";
 import { contactFormAction } from "@/_actions/contactActions";
 import { useForm } from "react-hook-form";
@@ -53,32 +51,24 @@ export default function Contact() {
   return (
     <section className="py-16 lg:section" id="contact">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
-          <MotionDiv
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex items-center justify-start flex-1"
-          >
+        <div className="flex flex-col lg:flex-row lg:gap-x-16">
+          <div className="flex items-center justify-start flex-1 mb-12 lg:mb-0">
             <div>
-              <h4 className="mb-2 text-xl font-medium tracking-wide uppercase pointer-events-none text-accent">
-                Get in touch
-              </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12 pointer-events-none">
+              <p className="eyebrow mb-3">04 — Contact</p>
+              <h2 className="text-[40px] lg:text-[64px] leading-[1.05] font-semibold text-ink mb-6">
                 Let&apos;s work <br />
                 together
               </h2>
+              <p className="max-w-sm text-muted">
+                Open to Senior/Staff Frontend and Full-Stack roles, remote-first.
+                Reach out directly, or use the form.
+              </p>
             </div>
-          </MotionDiv>
+          </div>
           <Form {...form}>
-            <MotionForm
-              variants={fadeIn("up", 0.3)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.3 }}
+            <form
               onSubmit={form.handleSubmit(submitContact)}
-              className="flex flex-col items-start flex-1 p-6 pb-24 border shadow-md rounded-2xl gap-y-6 shadow-white "
+              className="flex flex-col items-start flex-1 p-6 pb-10 border rounded-lg border-border bg-surface gap-y-6"
             >
               <FormField
                 control={form.control}
@@ -88,7 +78,7 @@ export default function Contact() {
                     <FormControl>
                       <input
                         {...field}
-                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        className={`!bg-transparent border-b border-border py-3 outline-none w-full placeholder:text-muted text-ink focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
                         type="text"
                         placeholder={`Full name*`}
                       />
@@ -105,7 +95,7 @@ export default function Contact() {
                     <FormControl>
                       <input
                         {...field}
-                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        className={`!bg-transparent border-b border-border py-3 outline-none w-full placeholder:text-muted text-ink focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
                         type="email"
                         placeholder={`Email*`}
                       />
@@ -122,7 +112,7 @@ export default function Contact() {
                     <FormControl>
                       <input
                         {...field}
-                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
+                        className={`!bg-transparent border-b border-border py-3 outline-none w-full placeholder:text-muted text-ink focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all`}
                         type="text"
                         placeholder={`Topic`}
                       />
@@ -139,7 +129,7 @@ export default function Contact() {
                     <FormControl>
                       <textarea
                         {...field}
-                        className={`!bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all resize-none mb-12 `}
+                        className={`!bg-transparent border-b border-border py-3 outline-none w-full placeholder:text-muted text-ink focus:border-accent focus-visible:outline-none focus-visible:bg-transparent autofill:bg-transparent transition-all resize-none mb-12 `}
                         placeholder={`Message...`}
                         spellCheck={true}
                       />
@@ -154,11 +144,12 @@ export default function Contact() {
                   Submitting...
                 </span>) : "Send message"}
               </button>
-              <div className="flex items-center gap-x-6">
+              <div className="flex items-center gap-x-6 text-muted">
                 <Link
                   aria-label="Email me!"
                   aria-details="email link"
                   title="link to my email"
+                  className="hover:text-accent transition-colors"
                   href="mailto:ahmedtakeshy@gmail.com">
                   <HiOutlineMail
                     aria-label="icon"
@@ -172,6 +163,7 @@ export default function Contact() {
                   aria-label="Whatsapp link"
                   aria-details="whatsapp link"
                   title="link to my whatsapp"
+                  className="hover:text-accent transition-colors"
                 >
                   <BsWhatsapp
                     aria-label="icon"
@@ -185,6 +177,7 @@ export default function Contact() {
                   aria-label="Messenger link"
                   aria-details="messenger link"
                   title="link to my messenger"
+                  className="hover:text-accent transition-colors"
                 >
                   <BsMessenger
                     aria-label="icon"
@@ -192,7 +185,7 @@ export default function Contact() {
                     className="text-[1.5rem]" />
                 </Link>
               </div>
-            </MotionForm>
+            </form>
           </Form>
         </div>
       </div>

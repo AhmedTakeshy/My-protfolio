@@ -27,13 +27,13 @@ export default function Cookies({ cookie }: CookiesProps) {
 
     if (cookieState === 'not-answered') {
         return (
-            <div className="fixed sm:bottom-6 bottom-0 sm:right-10 right-0 w-full sm:max-w-sm rounded-lg border p-6 shadow-lg z-[51] bg-gray-50">
-                <h2 className="text-xl font-semibold text-gray-700">🍪 Use of cookies</h2>
-                <p className="mb-4 mt-2 text-gray-400">
+            <div className="fixed sm:bottom-6 bottom-0 sm:right-10 right-0 w-full sm:max-w-sm rounded-lg border border-border p-6 shadow-lg z-[51] bg-surface">
+                <h2 className="text-lg font-semibold text-ink">Cookies</h2>
+                <p className="mb-4 mt-2 text-sm text-muted">
                     We use our own and third-party cookies to improve your experience and our services by analyzing how you use our website.{' '}
                     <Link
                         href="https://policies.google.com/technologies/cookies?hl=en-US"
-                        className="cursor-pointer underline hover:text-blue-500"
+                        className="cursor-pointer underline hover:text-accent transition-colors"
                         target='_blank'
                         rel={"noopener noreferrer"}
                         aria-label="More info"
@@ -47,7 +47,7 @@ export default function Cookies({ cookie }: CookiesProps) {
                         onClick={() => {
                             handleConsent('accepted');
                         }}
-                        className="text-md inline-block rounded-lg px-4 py-1 text-right font-semibold text-blue-500 transition duration-500 hover:bg-blue-100"
+                        className="text-sm inline-block rounded-lg px-4 py-1.5 text-right font-medium text-accent transition-colors duration-200 hover:bg-bg border border-border"
                     >
                         Accept
                     </button>

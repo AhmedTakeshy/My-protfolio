@@ -1,8 +1,8 @@
 
 export default function Footer() {
   return (
-    <p className="text-white flex justify-center relative z-[51] sm:pb-[6px] text-base sm:text-lg shadow">
-      Copyright © 2021 Takeshy. All rights reserved.
+    <p className="flex justify-center relative z-[51] py-6 text-sm font-mono text-muted border-t border-border">
+      © {new Date().getFullYear()} Ahmed Abdelsamie. All rights reserved.
     </p>
   );
 };
