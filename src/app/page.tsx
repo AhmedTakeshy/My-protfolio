@@ -10,7 +10,12 @@ const CORNER_MARK = "before:content-[''] before:absolute before:w-3 before:h-px 
 
 export default function page() {
   return (
-    <div className="relative bg-bg">
+    <div className="relative">
+      {/* No bg-bg here on purpose: body already sets it (globals.css). Giving
+          this wrapper its own opaque background would paint over the fixed
+          grid layer below — position:relative makes it a "positioned" box,
+          which paints in a later stacking step than its negative-z-index
+          child, so its background would sit on top of the grid. */}
       {/* Fixed full-page blueprint substrate — one grid for the whole site,
           not a per-section decoration (see globals.css). pointer-events-none
           so this never intercepts clicks on real content. */}
