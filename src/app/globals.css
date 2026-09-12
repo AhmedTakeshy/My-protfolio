@@ -22,6 +22,18 @@
   background-size: 48px 48px, 48px 48px, 192px 192px, 192px 192px;
 }
 
+/* A second, finer grid layer that scrolls WITH the document (unlike the
+   fixed .blueprint-grid-major above, which never moves relative to the
+   viewport). The relative motion between a layer that never moves and one
+   that moves at normal document speed is what reads as depth/parallax --
+   no scroll math needed, just two different position types. */
+.blueprint-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(255, 122, 69, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 122, 69, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 .btn {
   background: theme('colors.accent');
   color: theme('colors.bg');

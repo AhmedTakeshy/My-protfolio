@@ -1,17 +1,15 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// eslint-config-next 16 ships native flat config -- the old FlatCompat
+// bridge (needed for pre-flat-config "next/core-web-vitals" string extends)
+// is no longer required and actually crashes against this version (circular
+// structure in the plugin object when FlatCompat tries to JSON-stringify a
+// validation error). Import the flat configs directly instead.
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 
 const eslintConfig = [
   { ignores: [".next/**", "node_modules/**", "out/**", "build/**"] },
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
 ];
 
 export default eslintConfig;

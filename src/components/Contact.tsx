@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormMessage, FormItem } from "@/components/ui/form"
 import { ImSpinner9 } from 'react-icons/im'
 import { toast } from "sonner";
+import ScrollReveal from "@/components/ScrollReveal";
 
 
 
@@ -51,10 +52,10 @@ export default function Contact() {
   return (
     <section className="py-16 lg:section" id="contact">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row lg:gap-x-16">
-          <div className="flex items-center justify-start flex-1 mb-12 lg:mb-0">
+        <div className="flex flex-col lg:flex-row lg:gap-x-16" style={{ perspective: "1200px" }}>
+          <ScrollReveal className="flex items-center justify-start flex-1 mb-12 lg:mb-0">
             <div>
-              <p className="eyebrow mb-3">04 — Contact</p>
+              <p className="eyebrow mb-3">05 — Contact</p>
               <h2 className="text-[40px] lg:text-[64px] leading-[1.05] font-semibold text-ink mb-6">
                 Let&apos;s work <br />
                 together
@@ -64,11 +65,12 @@ export default function Contact() {
                 Reach out directly, or use the form.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
+          <ScrollReveal className="flex-1" delayMs={100}>
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(submitContact)}
-              className="flex flex-col items-start flex-1 p-6 pb-10 border rounded-lg border-border bg-surface gap-y-6"
+              className="flex flex-col items-start w-full p-6 pb-10 border rounded-lg border-border bg-surface gap-y-6"
             >
               <FormField
                 control={form.control}
@@ -187,6 +189,7 @@ export default function Contact() {
               </div>
             </form>
           </Form>
+          </ScrollReveal>
         </div>
       </div>
     </section>

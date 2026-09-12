@@ -1,14 +1,29 @@
 "use client"
+import { useRef } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link as LinkRs } from "react-scroll";
 import Link from "next/link";
+import { motion, useScroll, useTransform, useReducedMotion, useMotionValue } from "framer-motion";
 import { fadeIn } from "../lib/variants";
 import { MotionDiv, MotionH1, MotionP } from "../lib/motionsDev";
 import ArchitectureDiagram from "./hero/ArchitectureDiagram";
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  // Scoped to the hero's own scroll range: 0 as it enters, 1 once it has
+  // fully scrolled past. Drives the diagram's tilt -- the signature
+  // "this page is dimensional" moment, not decoration slapped on top.
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const prefersReducedMotion = useReducedMotion();
+  const staticProgress = useMotionValue(0);
+  const diagramProgress = prefersReducedMotion ? staticProgress : scrollYProgress;
+  const diagramRotateY = useTransform(diagramProgress, [0, 1], [0, 16]);
+  const diagramScale = useTransform(diagramProgress, [0, 1], [1, 0.92]);
+  const diagramOpacity = useTransform(diagramProgress, [0, 0.8], [1, 0.4]);
+
   return (
     <section
+      ref={sectionRef}
       className="relative flex items-center min-h-screen py-32 overflow-hidden"
       id="home"
     >
@@ -51,12 +66,12 @@ export default function Hero() {
               <LinkRs
                 className="flex items-center justify-center btn btn-lg hover:cursor-pointer"
                 role="link"
-                to="work"
-                title="See case studies"
+                to="contact"
+                title="Get in touch"
                 smooth={true}
-                aria-label="See case studies"
+                aria-label="Get in touch"
               >
-                See the work
+                Get in touch
               </LinkRs>
               <Link className="btn-link" href="/Ahmed.pdf" title="Download resume" aria-label="Download resume" download target="_blank" rel="noopener noreferrer">
                 Download résumé
@@ -76,8 +91,10 @@ export default function Hero() {
               </Link>
             </MotionDiv>
           </div>
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <ArchitectureDiagram />
+          <div className="flex-1 flex justify-center lg:justify-end" style={{ perspective: "1200px" }}>
+            <motion.div style={{ rotateY: diagramRotateY, scale: diagramScale, opacity: diagramOpacity }}>
+              <ArchitectureDiagram />
+            </motion.div>
           </div>
         </div>
       </div>

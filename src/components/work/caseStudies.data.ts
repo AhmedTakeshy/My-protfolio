@@ -47,11 +47,12 @@ export const caseStudies: CaseStudy[] = [
       { src: shifarefImg, alt: "Shifaref wellness and health e-commerce platform" },
     ],
     problem:
-      "Wellness professionals needed a platform to sell natural supplements and share expert guidance, with proper content management and secure multi-role access — not just a storefront.",
+      "Wellness professionals needed a platform to sell natural supplements and run a small medical blog to share expert guidance — with real content management and secure admin access, not just a storefront bolted onto a template.",
     architecture:
-      "Built end to end on Next.js and Prisma with Supabase auth: a tagged/categorized CMS for wellness content, role-based access control for admins and content managers, a customer messaging portal with read/unread tracking, and a responsive admin dashboard with light/dark mode.",
+      "Built on Next.js for server-rendered pages, so product and blog content is actually reachable through organic search rather than locked behind client-side rendering. Prisma and Supabase (Postgres) back an admin dashboard where the admin uploads products and drafts blog posts directly — a tagged/categorized CMS with read-time estimation, role-based access for admins and content managers, and a customer messaging portal with read/unread tracking.",
     impact: [
-      "Full CMS with tagging, categorization, and read-time estimation",
+      "Server-rendered storefront and blog on Next.js, built for organic search reach",
+      "Admin dashboard (Prisma + Postgres) for product uploads and medical blog content",
       "Multi-level role-based authentication",
       "Customer messaging with search and status tracking",
     ],
@@ -66,14 +67,15 @@ export const caseStudies: CaseStudy[] = [
       { src: doreyazilim, alt: "Doreyazilim multi-language e-commerce and web development agency site" },
     ],
     problem:
-      "Small e-commerce clients (Urban Jungle, Organic Store, DNK Store among them) needed custom storefronts without paying ongoing platform commission fees, plus multi-language support to reach more markets.",
+      "Doreyazilim is a digital solutions company — websites, web apps, mobile apps, and integrations for other businesses — that was still running its own site on WordPress. Its e-commerce clients (Urban Jungle, Organic Store, DNK Store among them) had the opposite problem: they were paying ongoing platform commission fees on storefronts they didn't fully own.",
     architecture:
-      "Built custom WooCommerce-integrated storefronts with tailored themes per client, an analytics dashboard for site performance, and multi-language routing with next-intl for localization.",
+      "Rebuilt Doreyazilim's own site on Next.js with next-intl for multi-language routing, replacing WordPress with something that actually reflected the caliber of work they sell. For clients, built custom WooCommerce-integrated storefronts with tailored themes per client and a client-facing analytics dashboard, so each business owned its store outright instead of paying per-sale platform fees.",
     impact: [
+      "Doreyazilim's own site moved off WordPress onto a custom Next.js build",
       "Multiple client storefronts shipped, commission-fee-free",
       "Multi-language support across markets",
       "Client-facing analytics dashboard",
     ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "next-intl", "React Hook Form"],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "next-intl", "React Hook Form", "WooCommerce"],
   },
 ];

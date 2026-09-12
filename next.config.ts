@@ -6,8 +6,8 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
+  cacheComponents: true,
   experimental: {
-    ppr: "incremental",
     optimizePackageImports: ["react-icons/*"],
   },
 };

@@ -2,6 +2,9 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -10,8 +13,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
-    "@next/bundle-analyzer": "^15.1.6",
-    "@next/third-parties": "^15.1.6",
+    "@next/bundle-analyzer": "^16.3.4",
+    "@next/third-parties": "^16.3.4",
     "@radix-ui/react-dialog": "^1.1.23",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
@@ -21,20 +24,21 @@
     "clsx": "^2.1.1",
     "cookies-next": "^5.1.0",
     "framer-motion": "^12.0.3",
-    "next": "15.4.0-canary.59",
+    "next": "^16.3.4",
     "next-themes": "^0.4.4",
     "node-mailjet": "^6.0.6",
     "posthog-js": "^1.210.2",
     "posthog-node": "^4.4.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.4.0",
     "react-scroll": "^1.9.0",
-    "sharp": "^0.33.5",
+    "sharp": "^0.35.4",
     "sonner": "^1.7.2",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
+    "web-vitals": "^4.2.4",
     "zod": "^3.24.1"
   },
   "devDependencies": {
@@ -44,7 +48,7 @@
     "@types/react-dom": "^19",
     "@types/react-scroll": "^1.8.10",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
+    "eslint-config-next": "^16.3.4",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

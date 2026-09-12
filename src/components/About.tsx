@@ -1,15 +1,17 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 export default function About() {
   return (
     <section className="section" id="about">
       <div className="container mx-auto">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
-          <div>
-            <p className="eyebrow mb-3">03 — About</p>
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20" style={{ perspective: "1200px" }}>
+          <ScrollReveal>
+            <p className="eyebrow mb-3">04 — About</p>
             <h2 className="text-[32px] lg:text-[40px] font-semibold text-ink leading-[1.1]">
               Self-taught. <br />Systems-minded.
             </h2>
-          </div>
-          <div>
+          </ScrollReveal>
+          <ScrollReveal delayMs={100}>
             <p className="mb-6 text-lg text-ink/90">
               I&apos;m a self-taught frontend engineer with 6+ years building
               production React and Next.js applications. I care most about
@@ -31,7 +33,7 @@ export default function About() {
               <span><span className="text-ink">6</span> modules architected</span>
               <span><span className="text-ink">90%</span> CI/CD time cut</span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

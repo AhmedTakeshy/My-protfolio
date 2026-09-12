@@ -1,29 +1,45 @@
 "use client"
 import Link from 'next/link'
-import { useEffect, useState } from 'react';
-import { useGetCookie, useSetCookie } from 'cookies-next/client';
+import { useSyncExternalStore } from 'react';
+import { useSetCookie } from 'cookies-next/client';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-type CookiesProps = {
-    cookie: string;
-};
-export default function Cookies({ cookie }: CookiesProps) {
-    const [cookieState, setCookieState] = useState<string>(cookie);
-    const getCookie = useGetCookie();
+// Pure client-side by design: consent state has no SEO/SSR value, and trying
+// to read it server-side ran into a real Next 16 PPR/Suspense interaction
+// ("the server could not finish this Suspense boundary... switched to
+// client rendering" -- React error #419) for zero benefit. useSyncExternalStore
+// is the correct primitive for an external, browser-only source like
+// document.cookie: no hydration-mismatch warning, no set-state-in-effect
+// lint violation (which a plain useEffect+useState version would trigger).
+
+function readConsentCookie(): string {
+    const match = document.cookie.match(/(?:^|; )cookie-consent-state=([^;]*)/);
+    return match ? decodeURIComponent(match[1]) : 'not-answered';
+}
+function getServerSnapshot() {
+    return 'not-answered';
+}
+
+// Minimal pub-sub: the only writer of this cookie is handleConsent below, so
+// notifying subscribers after writing is all useSyncExternalStore needs to
+// know to re-read the snapshot and re-render.
+const listeners = new Set<() => void>();
+function subscribe(callback: () => void) {
+    listeners.add(callback);
+    return () => listeners.delete(callback);
+}
+function notifyConsentChanged() {
+    listeners.forEach((listener) => listener());
+}
+
+export default function Cookies() {
+    const cookieState = useSyncExternalStore(subscribe, readConsentCookie, getServerSnapshot);
     const setCookie = useSetCookie();
-    useEffect(() => {
-        const state = getCookie('cookie-consent-state');
-        setCookieState(state || 'not-answered');
-    }, [getCookie]);
 
     const handleConsent = (state: string) => {
         setCookie('cookie-consent-state', state);
-        setCookieState(state);
+        notifyConsentChanged();
     };
-
-    if (cookieState === null) {
-        return null;
-    }
 
     if (cookieState === 'not-answered') {
         return (

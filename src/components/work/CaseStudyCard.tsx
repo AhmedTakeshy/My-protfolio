@@ -1,4 +1,5 @@
 "use client"
+import { useRef } from "react";
 import Image from "next/image";
 import type { CaseStudy } from "./caseStudies.data";
 
@@ -11,10 +12,29 @@ export default function CaseStudyCard({
   featured?: boolean;
   onOpen: () => void;
 }) {
+  const ref = useRef<HTMLButtonElement>(null);
+
+  // Cursor-tracked spotlight: a soft radial glow that follows the pointer,
+  // implemented with CSS custom properties so there's no re-render per
+  // mouse move. Pure enhancement -- the card is fully usable without it.
+  function handleMouseMove(e: React.MouseEvent<HTMLButtonElement>) {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--spot-x", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--spot-y", `${e.clientY - rect.top}px`);
+  }
+
   return (
     <button
+      ref={ref}
       onClick={onOpen}
-      className={`group text-left w-full rounded-lg border border-border bg-surface overflow-hidden hover:border-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2 ${featured ? "sm:col-span-2" : ""}`}
+      onMouseMove={handleMouseMove}
+      style={{
+        backgroundImage:
+          "radial-gradient(240px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(255,122,69,0.08), transparent 70%)",
+      }}
+      className="group relative text-left w-full rounded-lg border border-border bg-surface overflow-hidden hover:border-accent transition-colors focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
       aria-haspopup="dialog"
     >
       <div className={`relative bg-bg ${featured ? "aspect-[16/8]" : "aspect-[16/10]"}`}>
@@ -31,7 +51,7 @@ export default function CaseStudyCard({
           </span>
         )}
       </div>
-      <div className="p-5 lg:p-6">
+      <div className="relative p-5 lg:p-6">
         <h3 className="mb-1 text-lg font-semibold text-ink">{study.name}</h3>
         <p className="mb-3 text-sm text-muted">{study.role}</p>
         <div className="flex flex-wrap gap-1.5">

@@ -5,8 +5,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { Toaster } from "@/components/ui/sonner";
 import Cookies from "@/components/cookies";
-import { cookies } from 'next/headers';
-import { getCookie } from "cookies-next/server";
 
 const plexSans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-plex-sans" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600"], display: "swap", variable: "--font-plex-mono" });
@@ -95,8 +93,7 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-export default async function RootLayout({ children }: RootLayoutProps) {
-  const cookie = await getCookie('cookie-consent-state', { cookies })
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${plexSans.variable} ${plexMono.variable} font-sans bg-bg text-ink`}>
@@ -104,7 +101,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <SpeedInsights />
         <Analytics />
         <Toaster richColors />
-        <Cookies cookie={cookie as string} />
+        <Cookies />
       </body>
     </html>
   )
