@@ -27,7 +27,7 @@ export default function Capabilities() {
         <h2 className="mb-12 text-[32px] lg:text-[40px] font-semibold text-ink max-w-xl">
           A spec sheet, not a highlight reel.
         </h2>
-        <div className="grid gap-px overflow-hidden border rounded-lg sm:grid-cols-2 border-border bg-border">
+        <div className="grid gap-px overflow-hidden border rounded-lg sm:grid-cols-2 border-border bg-border" style={{ perspective: "1200px" }}>
           {GROUPS.map((group, i) => (
             <ScrollReveal key={group.label} delayMs={i * 80} className="p-6 lg:p-8 bg-surface">
               <h3 className="mb-4 font-mono text-xs tracking-widest uppercase text-accent">

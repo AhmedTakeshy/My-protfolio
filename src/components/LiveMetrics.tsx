@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import { onCLS, onINP, onLCP, onTTFB, type Metric } from "web-vitals";
+import ScrollReveal from "@/components/ScrollReveal";
 
 type MetricKey = "LCP" | "INP" | "CLS" | "TTFB";
 
@@ -62,13 +63,13 @@ export default function LiveMetrics() {
           the same metrics Google uses to judge real user experience. No fixture
           data, no hand-picked run.
         </p>
-        <div className="grid gap-px overflow-hidden border rounded-lg sm:grid-cols-2 lg:grid-cols-4 border-border bg-border">
-          {ORDER.map((key) => {
+        <div className="grid gap-px overflow-hidden border rounded-lg sm:grid-cols-2 lg:grid-cols-4 border-border bg-border" style={{ perspective: "1200px" }}>
+          {ORDER.map((key, i) => {
             const info = METRIC_INFO[key];
             const metric = metrics[key];
             const waitingForInteraction = key === "INP" && !metric;
             return (
-              <div key={key} className="p-6 lg:p-8 bg-surface">
+              <ScrollReveal key={key} delayMs={i * 80} className="p-6 lg:p-8 bg-surface">
                 <h3 className="mb-3 font-mono text-xs tracking-widest uppercase text-accent">
                   {info.label}
                 </h3>
@@ -85,7 +86,7 @@ export default function LiveMetrics() {
                     {RATING_LABEL[metric.rating]}
                   </span>
                 )}
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

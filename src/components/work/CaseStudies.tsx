@@ -16,7 +16,7 @@ export default function CaseStudies() {
         <h2 className="mb-12 text-[32px] lg:text-[40px] font-semibold text-ink max-w-xl">
           Systems I&apos;ve architected and shipped.
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2" style={{ perspective: "1200px" }}>
           {caseStudies.map((study, i) => (
             <ScrollReveal key={study.slug} delayMs={i * 100} className={i === 0 ? "sm:col-span-2" : ""}>
               <CaseStudyCard

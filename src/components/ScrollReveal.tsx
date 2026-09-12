@@ -12,6 +12,12 @@ import { useEffect, useRef, useState } from "react";
  *   opacity: 0 outright).
  * - A hard timeout forces the visible state regardless, in case the
  *   IntersectionObserver never fires for any reason.
+ *
+ * The pre-reveal state is a slight 3D tilt (rotateX + scale) rather than
+ * just a translateY -- settling from that tilt into flat/full-size is what
+ * gives the whole site its dimensional scroll feeling. Callers that want a
+ * shared vanishing point across several instances should set `perspective`
+ * on the immediate parent (see CaseStudies.tsx / Capabilities.tsx grids).
  */
 export default function ScrollReveal({
   children,
@@ -56,7 +62,13 @@ export default function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-500 ease-out ${preReveal ? "opacity-40 translate-y-2" : "opacity-100 translate-y-0"} ${className}`}
+      style={{
+        transform: preReveal
+          ? "rotateX(10deg) scale(0.96) translateY(8px)"
+          : "rotateX(0deg) scale(1) translateY(0px)",
+        transformOrigin: "center bottom",
+      }}
+      className={`transition-[opacity,transform] duration-700 ease-out will-change-transform ${preReveal ? "opacity-40" : "opacity-100"} ${className}`}
     >
       {children}
     </div>

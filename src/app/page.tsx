@@ -24,6 +24,13 @@ export default function page() {
           so this never intercepts clicks on real content. */}
       <div className="fixed inset-0 -z-10 pointer-events-none blueprint-grid-major" aria-hidden="true" />
 
+      {/* Second grid layer, absolutely (not fixed) positioned so it scrolls
+          WITH the page instead of staying glued to the viewport like the
+          layer above. That's the whole depth trick: one layer at 0x speed,
+          one at 1x -- their relative motion as you scroll reads as parallax,
+          with zero scroll-linked JS. */}
+      <div className="absolute inset-0 -z-10 pointer-events-none blueprint-grid-fine" aria-hidden="true" />
+
       {/* Corner crosshairs, like registration marks on a technical drawing. */}
       <div className={`fixed z-10 pointer-events-none top-4 left-4 ${CORNER_MARK} before:top-1.5 before:left-0 after:top-0 after:left-1.5`} aria-hidden="true" />
       <div className={`fixed z-10 pointer-events-none top-4 right-4 ${CORNER_MARK} before:top-1.5 before:right-0 after:top-0 after:right-1.5`} aria-hidden="true" />
