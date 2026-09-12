@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "shifaref",
     name: "Shifaref",
     role: "Sole builder — independent project",
-    liveUrl: "https://shifaref.com",
+    liveUrl: "https://shifaref.vercel.app",
     images: [
       { src: shifarefImg, alt: "Shifaref wellness and health e-commerce platform" },
     ],
