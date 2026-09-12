@@ -3,10 +3,11 @@ import { Link } from "react-scroll";
 
 const LINKS = [
   { to: "home", index: "00", label: "Home" },
-  { to: "work", index: "01", label: "Work" },
-  { to: "skills", index: "02", label: "Capabilities" },
-  { to: "about", index: "03", label: "About" },
-  { to: "contact", index: "04", label: "Contact" },
+  { to: "live", index: "01", label: "Live" },
+  { to: "work", index: "02", label: "Work" },
+  { to: "skills", index: "03", label: "Capabilities" },
+  { to: "about", index: "04", label: "About" },
+  { to: "contact", index: "05", label: "Contact" },
 ];
 
 export default function Nav() {
