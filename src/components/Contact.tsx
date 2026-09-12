@@ -54,7 +54,7 @@ export default function Contact() {
         <div className="flex flex-col lg:flex-row lg:gap-x-16">
           <div className="flex items-center justify-start flex-1 mb-12 lg:mb-0">
             <div>
-              <p className="eyebrow mb-3">04 — Contact</p>
+              <p className="eyebrow mb-3">05 — Contact</p>
               <h2 className="text-[40px] lg:text-[64px] leading-[1.05] font-semibold text-ink mb-6">
                 Let&apos;s work <br />
                 together

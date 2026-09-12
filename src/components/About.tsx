@@ -4,7 +4,7 @@ export default function About() {
       <div className="container mx-auto">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
-            <p className="eyebrow mb-3">03 — About</p>
+            <p className="eyebrow mb-3">04 — About</p>
             <h2 className="text-[32px] lg:text-[40px] font-semibold text-ink leading-[1.1]">
               Self-taught. <br />Systems-minded.
             </h2>

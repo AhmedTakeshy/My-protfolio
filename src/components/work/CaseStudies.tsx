@@ -12,7 +12,7 @@ export default function CaseStudies() {
   return (
     <section className="section" id="work">
       <div className="container mx-auto">
-        <p className="eyebrow mb-3">01 — Work</p>
+        <p className="eyebrow mb-3">02 — Work</p>
         <h2 className="mb-12 text-[32px] lg:text-[40px] font-semibold text-ink max-w-xl">
           Systems I&apos;ve architected and shipped.
         </h2>

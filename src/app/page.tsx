@@ -1,5 +1,6 @@
 import Nav from '@/components/Nav';
 import Hero from "@/components/Hero";
+import LiveMetrics from "@/components/LiveMetrics";
 import Capabilities from "@/components/capabilities/Capabilities";
 import CaseStudies from "@/components/work/CaseStudies";
 import About from "@/components/About";
@@ -31,6 +32,7 @@ export default function page() {
       <ScrollProgress />
       <Nav />
       <Hero />
+      <LiveMetrics />
       <CaseStudies />
       <Capabilities />
       <About />

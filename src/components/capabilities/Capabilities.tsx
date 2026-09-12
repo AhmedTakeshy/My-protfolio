@@ -23,7 +23,7 @@ export default function Capabilities() {
   return (
     <section className="section" id="skills">
       <div className="container mx-auto">
-        <p className="eyebrow mb-3">02 — Capabilities</p>
+        <p className="eyebrow mb-3">03 — Capabilities</p>
         <h2 className="mb-12 text-[32px] lg:text-[40px] font-semibold text-ink max-w-xl">
           A spec sheet, not a highlight reel.
         </h2>
