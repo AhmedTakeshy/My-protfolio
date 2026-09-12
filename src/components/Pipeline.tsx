@@ -52,10 +52,10 @@ function Node({ stage, index, total, progress }: { stage: Stage; index: number; 
   const dotOpacity = useTransform(checkOpacity, (v) => 1 - v);
 
   return (
-    <div className="flex flex-col items-center text-center shrink-0 w-16 lg:w-24">
+    <div className="flex flex-col items-center text-center shrink-0 w-12 sm:w-16 lg:w-24">
       <motion.div
         style={{ borderColor }}
-        className="relative z-10 flex items-center justify-center w-12 h-12 mb-3 border-2 rounded-md bg-surface lg:w-14 lg:h-14"
+        className="relative z-10 flex items-center justify-center w-10 h-10 mb-3 border-2 rounded-md bg-surface sm:w-12 sm:h-12 lg:w-14 lg:h-14"
       >
         <motion.span style={{ opacity: checkOpacity }} className="absolute text-lg text-accent">
           <IoCheckmark />
@@ -73,7 +73,7 @@ function Node({ stage, index, total, progress }: { stage: Stage; index: number; 
 function Connector({ progress, from, to }: { progress: MotionValue<number>; from: number; to: number }) {
   const scaleX = useTransform(progress, [from, to], [0, 1]);
   return (
-    <div className="relative flex-1 h-px mx-1 mt-6 bg-border lg:mt-7">
+    <div className="relative flex-1 h-px mx-0.5 mt-5 bg-border sm:mx-1 sm:mt-6 lg:mt-7">
       <motion.div style={{ scaleX, originX: 0 }} className="absolute inset-0 bg-accent" />
     </div>
   );
