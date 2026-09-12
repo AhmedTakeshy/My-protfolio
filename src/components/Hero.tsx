@@ -66,12 +66,12 @@ export default function Hero() {
               <LinkRs
                 className="flex items-center justify-center btn btn-lg hover:cursor-pointer"
                 role="link"
-                to="work"
-                title="See case studies"
+                to="contact"
+                title="Get in touch"
                 smooth={true}
-                aria-label="See case studies"
+                aria-label="Get in touch"
               >
-                See the work
+                Get in touch
               </LinkRs>
               <Link className="btn-link" href="/Ahmed.pdf" title="Download resume" aria-label="Download resume" download target="_blank" rel="noopener noreferrer">
                 Download résumé
